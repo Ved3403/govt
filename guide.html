@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide Me | Bharat Connect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+</head>
+<body>
+
+    <!-- Gov Bar -->
+    <div class="gov-bar">
+        <div class="gov-bar-content container-fluid">
+            <div class="gov-left">
+                <span>Government of India</span>
+                <span>|</span>
+                <span>Ministry of Electronics and Information Technology</span>
+            </div>
+            <div class="gov-right">
+                <a href="#main-content">Skip to Main Content</a>
+                <button class="lang-toggle">अ/A</button>
+                <button class="accessibility-toggle"><i data-lucide="eye"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Nav -->
+    <header class="main-header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" alt="State Emblem of India" width="40" height="55">
+                <div class="logo-text">
+                    <h1>Bharat Connect</h1>
+                    <span>One Nation. One Digital Gateway.</span>
+                </div>
+            </a>
+            <nav class="desktop-nav">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="guide.html" class="active">Guide Me</a>
+                <a href="schemes.html">Schemes</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="search-btn"><i data-lucide="search"></i></button>
+                <button class="menu-btn"><i data-lucide="menu"></i></button>
+            </div>
+        </div>
+        <div class="tricolor-bar"></div>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero -->
+        <section class="hero">
+            <h1>🗺️ Guide Me</h1>
+            <p>A step-by-step guide through every government service — from start to finish.</p>
+        </section>
+
+        <div class="container">
+            <!-- Journey Selector View -->
+            <div id="journey-selector">
+                <div class="journeys-grid" id="journeys-grid">
+                    <!-- Populated via JS -->
+                </div>
+            </div>
+
+            <!-- Journey Detail View -->
+            <div id="journey-detail">
+                <div class="journey-header">
+                    <div class="journey-header-left">
+                        <button class="back-btn" onclick="goBack()" aria-label="Go back">
+                            <i data-lucide="arrow-left"></i>
+                        </button>
+                        <div>
+                            <h2 id="jd-title" style="color: var(--navy-900); margin: 0;">Journey Title</h2>
+                            <p id="jd-progress" style="color: var(--gray-600); margin: 0; font-size: 0.875rem;">Step 1 of X</p>
+                        </div>
+                    </div>
+                    <button class="btn-secondary" onclick="saveProgress()">Save Progress</button>
+                </div>
+
+                <div class="journey-layout">
+                    <!-- Timeline -->
+                    <div class="timeline" id="jd-timeline">
+                        <!-- Populated via JS -->
+                    </div>
+
+                    <!-- Detail Panel -->
+                    <div class="step-panel-container">
+                        <div class="step-panel" id="jd-panel">
+                            <!-- Populated via JS -->
+                        </div>
+                        
+                        <!-- Completion Screen -->
+                        <div id="completion-screen">
+                            <div class="celebration-icon">🎉</div>
+                            <h2>Journey Completed!</h2>
+                            <p>You have successfully navigated all the steps for this guide. You're now ready to complete your official application with all required documents and knowledge.</p>
+                            <div class="completion-actions">
+                                <a href="#" class="btn-primary" id="official-portal-btn" target="_blank">Go to Official Portal <i data-lucide="external-link" style="width:16px;height:16px;display:inline-block;vertical-align:middle;margin-left:4px;"></i></a>
+                                <button class="btn-secondary" onclick="window.print()">Print Guide</button>
+                                <button class="btn-secondary" onclick="goBack()">Explore More Journeys</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="footer-container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <h3>About Bharat Connect</h3>
+                        <p style="color: var(--gray-200); font-size: 0.875rem; margin-top: 16px;">The national portal of India provides a single window access to information and services being provided by the various Indian Government entities.</p>
+                    </div>
+                    <div class="footer-col">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Apply for Documents</a></li>
+                            <li><a href="#">Pay Taxes</a></li>
+                            <li><a href="#">Register Business</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h3>Connect</h3>
+                        <ul>
+                            <li><a href="#">Help & Support</a></li>
+                            <li><a href="#">Provide Feedback</a></li>
+                            <li><a href="#">Contact Directory</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="#">MyGov</a></li>
+                            <li><a href="#">Digital India</a></li>
+                            <li><a href="#">Data.gov.in</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-container">
+                <p>&copy; 2026 Government of India. Designed for Bharat Connect.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+
+        // Journey Data
+        const journeys = [
+            {
+                id: 'scholarship',
+                icon: '🎓',
+                title: 'Get a Scholarship',
+                desc: 'From finding the right scholarship to submitting your application',
+                time: '~15 min to understand',
+                portalUrl: 'https://scholarships.gov.in',
+                steps: [
+                    {
+                        title: 'Find Relevant Scholarships',
+                        desc: 'Discover scholarships that apply to you on the National Scholarship Portal (NSP), state portals, or PM Scholarship schemes. Different scholarships target different education levels and social groups.',
+                        needs: ['Marksheets', 'Income Certificate', 'Aadhaar', 'Bank Details'],
+                        tip: 'Apply before deadline — most scholarships close in October.',
+                        link: { text: 'National Scholarship Portal', url: 'https://scholarships.gov.in' }
+                    },
+                    {
+                        title: 'Check Your Eligibility',
+                        desc: 'Carefully review the merit criteria, income limits, and caste/category requirements for your chosen scholarship.',
+                        needs: ['Income certificate', 'Caste certificate (if applicable)', 'Disability certificate (if applicable)'],
+                        tip: 'Income certificate must be from the current financial year to be valid.',
+                        link: null
+                    },
+                    {
+                        title: 'Understand the Benefits',
+                        desc: 'Familiarize yourself with the scholarship amount, duration, and conditions for renewal in subsequent years.',
+                        needs: [],
+                        tip: 'Some scholarships are renewable — you must maintain the required CGPA/percentage to keep receiving it.',
+                        link: null
+                    },
+                    {
+                        title: 'Prepare Required Documents',
+                        desc: 'Gather all necessary documentation before starting the online application to avoid timeouts or errors.',
+                        needs: ['Aadhaar Card', 'Previous year marksheets', 'Valid income proof', 'Bank passbook (seeded with Aadhaar)', 'Passport size photographs'],
+                        tip: 'Get your income certificate first — it typically takes 7-15 days to process.',
+                        link: null
+                    },
+                    {
+                        title: 'Complete the Application',
+                        desc: 'Register on the NSP, fill in the application form accurately, upload clear scanned copies of documents, and verify via Aadhaar OTP.',
+                        needs: ['Mobile number linked to Aadhaar', 'Scanned documents (PDF/JPEG format)'],
+                        tip: 'Use a desktop browser like Chrome or Firefox — avoid mobile browsers for document uploads to prevent errors.',
+                        link: null
+                    },
+                    {
+                        title: 'Track & Follow Up',
+                        desc: 'After submission, note down your application ID. You will need to check the portal periodically for status updates or query responses.',
+                        needs: ['Application ID', 'Login credentials'],
+                        tip: 'Ensure your institution verifies your application on the portal, otherwise it will not move forward.',
+                        link: { text: 'Check Status on NSP', url: 'https://scholarships.gov.in' }
+                    }
+                ]
+            },
+            {
+                id: 'business',
+                icon: '🚀',
+                title: 'Start a Business',
+                desc: 'From business idea to official registration and first license',
+                time: '~20 min to understand',
+                portalUrl: 'https://www.mca.gov.in',
+                steps: [
+                    {
+                        title: 'Choose Business Structure',
+                        desc: 'Decide if you want a Sole Proprietorship, Partnership, LLP, or Private Limited Company. This affects liability, taxation, and compliance.',
+                        needs: [],
+                        tip: 'For most solo founders starting small, a Proprietorship or LLP is the easiest and cheapest to set up.',
+                        link: null
+                    },
+                    {
+                        title: 'Register Your Business',
+                        desc: 'Register via Udyam Registration (for MSMEs) or MCA (for Companies/LLPs).',
+                        needs: ['Aadhaar', 'PAN Card', 'Business Address Proof'],
+                        tip: 'Udyam Registration for MSMEs is completely free. Do not pay fake agents online.',
+                        link: { text: 'Udyam Portal', url: 'https://udyamregistration.gov.in' }
+                    },
+                    {
+                        title: 'Get PAN and TAN',
+                        desc: 'Apply for a business Permanent Account Number (PAN) and Tax Deduction Account Number (TAN) if you plan to hire employees.',
+                        needs: ['Registration Certificate', 'Identity Proof', 'Address Proof'],
+                        tip: 'Companies get PAN/TAN along with their incorporation certificate via the SPICe+ form.',
+                        link: null
+                    }
+                ]
+            },
+            {
+                id: 'birth-certificate',
+                icon: '📋',
+                title: 'Get Birth Certificate',
+                desc: 'Obtain a birth certificate for a new child or as an adult',
+                time: '~10 min to understand',
+                portalUrl: 'https://crsorgi.gov.in/web/index.php/auth/login',
+                steps: [
+                    {
+                        title: 'Report the Birth',
+                        desc: 'Births must be registered within 21 days. If born in a hospital, the hospital sends the report to the local registrar.',
+                        needs: ['Hospital Discharge Summary', 'Parents Aadhaar'],
+                        tip: 'Registration within 21 days is free of cost.',
+                        link: null
+                    },
+                    {
+                        title: 'Apply for Certificate',
+                        desc: 'Visit the local municipal office or panchayat, or use the state online portal to apply for the printed certificate.',
+                        needs: ['Application form', 'Proof of birth', 'Identity proof of parents'],
+                        tip: 'Add the childs name later if not decided yet; you can get a nameless certificate first.',
+                        link: null
+                    }
+                ]
+            },
+            {
+                id: 'ration-card',
+                icon: '🃏',
+                title: 'Get a Ration Card',
+                desc: 'Apply for or update your ration card for subsidized food',
+                time: '~15 min to understand',
+                portalUrl: 'https://nfsa.gov.in',
+                steps: [
+                    {
+                        title: 'Determine Card Type',
+                        desc: 'Understand which category you fall under: AAY (Antyodaya), BPL (Below Poverty Line), or APL (Above Poverty Line).',
+                        needs: ['Income Proof'],
+                        tip: 'Your state might have specific color-coded cards for each category.',
+                        link: null
+                    },
+                    {
+                        title: 'Submit Application',
+                        desc: 'Apply through your state Food and Civil Supplies portal or visit the local rationing office.',
+                        needs: ['Family group photo', 'Aadhaar of all members', 'Address proof', 'Income certificate'],
+                        tip: 'Ensure all family members Aadhaar are linked to avoid rejection.',
+                        link: null
+                    }
+                ]
+            },
+            {
+                id: 'farmer-loan',
+                icon: '🌾',
+                title: 'Apply for Farmer Loan',
+                desc: 'Access agricultural credit schemes and Kisan Credit Card',
+                time: '~15 min to understand',
+                portalUrl: 'https://pmkisan.gov.in',
+                steps: [
+                    {
+                        title: 'Understand Kisan Credit Card (KCC)',
+                        desc: 'KCC provides short-term credit limits for crops and term loans. Interest subvention makes it very affordable.',
+                        needs: [],
+                        tip: 'Prompt repayment can bring your effective interest rate down to just 3-4%.',
+                        link: null
+                    },
+                    {
+                        title: 'Bank Application',
+                        desc: 'Visit your nearest rural bank or cooperative bank with your land records.',
+                        needs: ['Land holding documents (Patta/Khasra)', 'Aadhaar', 'Passport photos'],
+                        tip: 'Loans up to Rs 1.6 lakh do not require any collateral.',
+                        link: null
+                    }
+                ]
+            },
+            {
+                id: 'pension',
+                icon: '👴',
+                title: 'Understand Pension',
+                desc: 'Atal Pension Yojana, NPS, and pension for government employees',
+                time: '~20 min to understand',
+                portalUrl: 'https://npscra.nsdl.co.in',
+                steps: [
+                    {
+                        title: 'Choose the Right Scheme',
+                        desc: 'APY for unorganized sector, NPS for formal sector or voluntary investment, or EPF.',
+                        needs: [],
+                        tip: 'Start APY early (at age 18) to pay minimum contributions for max guaranteed pension.',
+                        link: null
+                    },
+                    {
+                        title: 'Open an Account',
+                        desc: 'Open an APY/NPS account via your bank or online using Aadhaar.',
+                        needs: ['Savings Bank Account', 'Aadhaar', 'Mobile number'],
+                        tip: 'Ensure your bank account has auto-debit set up to avoid default penalties.',
+                        link: null
+                    }
+                ]
+            }
+        ];
+
+        // State
+        let currentJourney = null;
+        let currentStep = 0;
+        let completedSteps = [];
+
+        // DOM Elements
+        const journeySelector = document.getElementById('journey-selector');
+        const journeyDetail = document.getElementById('journey-detail');
+        const journeysGrid = document.getElementById('journeys-grid');
+        const jdTitle = document.getElementById('jd-title');
+        const jdProgress = document.getElementById('jd-progress');
+        const jdTimeline = document.getElementById('jd-timeline');
+        const jdPanel = document.getElementById('jd-panel');
+        const completionScreen = document.getElementById('completion-screen');
+        const officialPortalBtn = document.getElementById('official-portal-btn');
+
+        // Initialize
+        function init() {
+            renderJourneys();
+            
+            // Check URL for journey
+            const urlParams = new URLSearchParams(window.location.search);
+            const journeyId = urlParams.get('journey');
+            
+            if (journeyId) {
+                const journey = journeys.find(j => j.id === journeyId);
+                if (journey) {
+                    openJourney(journey);
+                } else {
+                    showSelector();
+                }
+            } else {
+                showSelector();
+            }
+        }
+
+        function renderJourneys() {
+            journeysGrid.innerHTML = journeys.map(j => `
+                <div class="journey-card">
+                    <div class="journey-icon">${j.icon}</div>
+                    <h3>${j.title}</h3>
+                    <p>${j.desc}</p>
+                    <div class="journey-meta">
+                        <i data-lucide="clock" style="width:16px;height:16px;"></i>
+                        <span>${j.time}</span>
+                    </div>
+                    <button class="btn-primary" onclick="window.location.href='?journey=${j.id}'">Start Journey →</button>
+                </div>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        function showSelector() {
+            journeySelector.style.display = 'block';
+            journeyDetail.style.display = 'none';
+            // Update URL without reload
+            window.history.pushState({}, '', window.location.pathname);
+        }
+
+        function openJourney(journey) {
+            currentJourney = journey;
+            currentStep = 0;
+            
+            // Load saved progress
+            const saved = localStorage.getItem(`journey_${journey.id}`);
+            if (saved) {
+                completedSteps = JSON.parse(saved);
+                // Find first incomplete step
+                for (let i = 0; i < journey.steps.length; i++) {
+                    if (!completedSteps.includes(i)) {
+                        currentStep = i;
+                        break;
+                    }
+                }
+                if (completedSteps.length === journey.steps.length) {
+                    currentStep = journey.steps.length - 1; // Show last step if all done
+                }
+            } else {
+                completedSteps = [];
+            }
+
+            jdTitle.textContent = `${journey.icon} ${journey.title}`;
+            officialPortalBtn.href = journey.portalUrl;
+            
+            journeySelector.style.display = 'none';
+            journeyDetail.style.display = 'block';
+            
+            renderJourneyView();
+        }
+
+        function renderJourneyView() {
+            if (completedSteps.length === currentJourney.steps.length && currentStep === currentJourney.steps.length) {
+                // Show completion screen
+                jdPanel.style.display = 'none';
+                completionScreen.style.display = 'block';
+                jdProgress.textContent = `Completed`;
+            } else {
+                jdPanel.style.display = 'block';
+                completionScreen.style.display = 'none';
+                jdProgress.textContent = `Step ${currentStep + 1} of ${currentJourney.steps.length}`;
+                renderTimeline();
+                renderStepPanel();
+            }
+        }
+
+        function renderTimeline() {
+            jdTimeline.innerHTML = currentJourney.steps.map((step, idx) => {
+                const isCompleted = completedSteps.includes(idx);
+                const isActive = idx === currentStep;
+                
+                let icon = idx + 1;
+                if (isCompleted && !isActive) {
+                    icon = `<i data-lucide="check" style="width:16px;height:16px;"></i>`;
+                }
+
+                return `
+                    <div class="timeline-step ${isCompleted ? 'completed' : ''} ${isActive ? 'active' : ''}" onclick="goToStep(${idx})">
+                        <div class="step-circle">${icon}</div>
+                        <div class="step-title-sm">${step.title}</div>
+                    </div>
+                `;
+            }).join('');
+            lucide.createIcons();
+        }
+
+        function renderStepPanel() {
+            const step = currentJourney.steps[currentStep];
+            const isCompleted = completedSteps.includes(currentStep);
+            
+            let needsHtml = '';
+            if (step.needs && step.needs.length > 0) {
+                needsHtml = `
+                    <div class="box">
+                        <h4><i data-lucide="file-text" style="width:20px;height:20px;"></i> What you need</h4>
+                        <ul>
+                            ${step.needs.map(n => `<li>${n}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+            }
+
+            let linkHtml = '';
+            if (step.link) {
+                linkHtml = `<a href="${step.link.url}" target="_blank" class="official-link"><i data-lucide="external-link" style="width:16px;height:16px;"></i> ${step.link.text}</a>`;
+            }
+
+            jdPanel.innerHTML = `
+                <div style="margin-bottom: 8px; color: var(--saffron); font-weight: 600;">STEP ${currentStep + 1}</div>
+                <h2>${step.title}</h2>
+                <p class="step-desc">${step.desc}</p>
+                
+                ${needsHtml}
+                
+                <div class="pro-tip">
+                    <strong><i data-lucide="lightbulb" style="width:20px;height:20px;"></i> Pro Tip</strong>
+                    ${step.tip}
+                </div>
+                
+                ${linkHtml}
+                
+                <div class="step-actions">
+                    <button class="btn-primary" onclick="markDoneAndContinue()">
+                        ${isCompleted ? 'Continue →' : 'Mark as Done & Continue →'}
+                    </button>
+                </div>
+            `;
+            
+            // Trigger reflow for animation
+            jdPanel.style.animation = 'none';
+            jdPanel.offsetHeight; /* trigger reflow */
+            jdPanel.style.animation = null; 
+
+            lucide.createIcons();
+        }
+
+        function goToStep(idx) {
+            currentStep = idx;
+            renderJourneyView();
+        }
+
+        function markDoneAndContinue() {
+            if (!completedSteps.includes(currentStep)) {
+                completedSteps.push(currentStep);
+                localStorage.setItem(`journey_${currentJourney.id}`, JSON.stringify(completedSteps));
+            }
+            
+            currentStep++;
+            renderJourneyView();
+        }
+
+        function saveProgress() {
+            alert('Progress saved successfully!');
+        }
+
+        function goBack() {
+            showSelector();
+        }
+
+        // Run init
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+
+    <script src="js/data.js"></script>
+</body>
+</html>

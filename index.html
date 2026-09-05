@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bharat Connect - The National Portal of India. One Digital Gateway to all government services, schemes, and information.">
+    <title>Bharat Connect | National Portal of India</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to Main Content</a>
+
+    <!-- Government Top Bar -->
+    <div class="gov-bar">
+        <div class="container gov-bar-content">
+            <div class="gov-bar-left">
+                <span class="emblem">🏛️</span>
+                <span>Government of India</span>
+                <span class="divider">|</span>
+                <span>National Portal of India</span>
+                <span class="divider">|</span>
+                <span>Digital India</span>
+            </div>
+            <div class="gov-bar-right">
+                <a href="#main-content">Skip to Content</a>
+                <div class="text-size">
+                    <button aria-label="Decrease text size">A-</button>
+                    <button aria-label="Normal text size">A</button>
+                    <button aria-label="Increase text size">A+</button>
+                </div>
+                <button aria-label="High Contrast" class="icon-btn"><i data-lucide="contrast"></i></button>
+                <button aria-label="Screen Reader" class="icon-btn"><i data-lucide="volume-2"></i></button>
+                <div class="lang-toggle">
+                    <button class="active">EN</button>
+                    <span class="divider">|</span>
+                    <button>हिं</button>
+                </div>
+                <a href="help.html">Help</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="main-nav">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <div class="chakra"><i data-lucide="aperture" color="#FF9933"></i></div>
+                <div class="logo-text">
+                    <span class="brand">BHARAT CONNECT</span>
+                    <span class="domain">india.gov.in</span>
+                </div>
+            </a>
+            
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="services.html">Services</a>
+                <a href="schemes.html">Schemes</a>
+                <a href="services.html">Documents</a>
+                <a href="ministries.html">Ministries</a>
+                <a href="states.html">States</a>
+                <a href="news.html">News</a>
+                <a href="explore.html">Explore India</a>
+                <a href="help.html">Help</a>
+            </div>
+            
+            <div class="nav-actions">
+                <button aria-label="Search" class="icon-btn"><i data-lucide="search"></i></button>
+                <a href="dashboard.html" class="btn-dashboard">My Dashboard</a>
+                <button class="mobile-menu" aria-label="Menu"><i data-lucide="menu"></i></button>
+            </div>
+        </div>
+    </nav>
+    <div class="tricolor-bar"></div>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>Your Government. Your Services. One Digital Gateway.</h1>
+                <p>Discover government services, schemes and official resources through a simpler, more intelligent experience.</p>
+                
+                <div class="search-container">
+                    <input type="text" class="search-box" id="main-search" placeholder="What do you need help with today?" aria-label="Search for services or schemes">
+                    <i data-lucide="mic" class="search-mic"></i>
+                    <button class="search-btn"><i data-lucide="search"></i> Search</button>
+                    
+                    <div class="search-placeholder-anim">
+                        <span id="rotating-text">Find "PM Kisan Yojana"</span>
+                    </div>
+                </div>
+                
+                <div class="trending-searches">
+                    <span>Trending:</span>
+                    <a href="#" class="tag">PM Kisan</a>
+                    <a href="#" class="tag">Ayushman Bharat</a>
+                    <a href="#" class="tag">Scholarship</a>
+                    <a href="#" class="tag">Passport</a>
+                    <a href="#" class="tag">Ration Card</a>
+                    <a href="#" class="tag">Startup India</a>
+                    <a href="#" class="tag">PMAY Housing</a>
+                </div>
+                
+                <div class="stats-row">
+                    <div class="stat"><i data-lucide="layout-grid"></i> <span>2,000+ Services</span></div>
+                    <div class="stat"><i data-lucide="file-text"></i> <span>300+ Schemes</span></div>
+                    <div class="stat"><i data-lucide="building-2"></i> <span>28 Ministries</span></div>
+                    <div class="stat"><i data-lucide="map"></i> <span>36 States & UTs</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Citizen Need Cards Section -->
+        <section class="section need-section">
+            <div class="container">
+                <div class="section-header center">
+                    <h2>What do you need help with?</h2>
+                    <p>Choose your area of need — we'll guide you to the right government services and schemes.</p>
+                </div>
+                
+                <div class="grid cards-grid">
+                    <a href="search.html?category=education" class="need-card">
+                        <div class="icon-wrap"><i data-lucide="graduation-cap"></i></div>
+                        <h3>Student & Education</h3>
+                        <p>Scholarships, admissions, educational loans</p>
+                        <span class="explore-link">Explore &rarr;</span>
+                    </a>
+                    <a href="search.html?category=jobs" class="need-card">
+                        <div class="icon-wrap"><i data-lucide="briefcase"></i></div>
+                        <h3>Jobs & Employment</h3>
+                        <p>Government jobs, skill development, EPFO</p>
+                        <span class="explore-link">Explore &rarr;</span>
+                    </a>
+                    <a href="search.html?category=agriculture" class="need-card">
+                        <div class="icon-wrap"><i data-lucide="tractor"></i></div>
+                        <h3>Farmer & Agriculture</h3>
+                        <p>PM-KISAN, crop insurance, agricultural loans</p>
+                        <span class="explore-link">Explore &rarr;</span>
+                    </a>
+                    <a href="search.html?category=health" class="need-card">
+                        <div class="icon-wrap"><i data-lucide="heart-pulse"></i></div>
+                        <h3>Health & Wellness</h3>
+                        <p>Ayushman Bharat, health schemes, hospitals</p>
+                        <span class="explore-link">Explore &rarr;</span>
+                    </a>
+                    <a href="search.html?category=finance" class="need-card">
+                        <div class="icon-wrap"><i data-lucide="indian-rupee"></i></div>
+                        <h3>Financial Support</h3>
+                        <p>MUDRA loans, financial assistance, subsidies</p>
+                        <span class="explore-link">Explore &rarr;</span>
+                    </a>
+                    <a href="search.html?category=business" class="need-card">
+                        <div class="icon-wrap"><i data-lucide="building"></i></div>
+                        <h3>Business & MSME</h3>
+                        <p>Startup India, MSME registration, GST</p>
+                        <span class="explore-link">Explore &rarr;</span>
+                    </a>
+                    <a href="search.html?category=housing" class="need-card">
+                        <div class="icon-wrap"><i data-lucide="home"></i></div>
+                        <h3>Housing & Local Services</h3>
+                        <p>PMAY, urban development, housing schemes</p>
+                        <span class="explore-link">Explore &rarr;</span>
+                    </a>
+                    <a href="search.html?category=documents" class="need-card">
+                        <div class="icon-wrap"><i data-lucide="file-badge"></i></div>
+                        <h3>Documents & Certificates</h3>
+                        <p>Aadhaar, PAN, birth certificate, passport</p>
+                        <span class="explore-link">Explore &rarr;</span>
+                    </a>
+                    <a href="search.html?category=senior" class="need-card">
+                        <div class="icon-wrap"><i data-lucide="users"></i></div>
+                        <h3>Senior Citizen Services</h3>
+                        <p>Pension, senior health, Atal Pension Yojana</p>
+                        <span class="explore-link">Explore &rarr;</span>
+                    </a>
+                    <a href="search.html?category=women" class="need-card">
+                        <div class="icon-wrap"><i data-lucide="baby"></i></div>
+                        <h3>Women & Child Services</h3>
+                        <p>Beti Bachao, Sukanya Samriddhi, maternity</p>
+                        <span class="explore-link">Explore &rarr;</span>
+                    </a>
+                    <a href="search.html?category=disability" class="need-card">
+                        <div class="icon-wrap"><i data-lucide="accessibility"></i></div>
+                        <h3>Person with Disability</h3>
+                        <p>UDID, disability schemes, accessibility</p>
+                        <span class="explore-link">Explore &rarr;</span>
+                    </a>
+                    <a href="search.html?category=transport" class="need-card">
+                        <div class="icon-wrap"><i data-lucide="plane"></i></div>
+                        <h3>Travel & Transport</h3>
+                        <p>Passport, visa, railways, driving license</p>
+                        <span class="explore-link">Explore &rarr;</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bharat Scheme Finder Teaser -->
+        <section class="section scheme-finder">
+            <div class="container">
+                <div class="scheme-finder-content">
+                    <div class="text-content">
+                        <h2><i data-lucide="search" class="inline-icon"></i> Bharat Scheme Finder</h2>
+                        <p>Answer 3 simple questions and discover government schemes you're eligible for.</p>
+                        <div class="steps-preview">
+                            <span class="step">1. Who are you?</span> &rarr;
+                            <span class="step">2. Your details</span> &rarr;
+                            <span class="step">3. Your schemes</span>
+                        </div>
+                        <a href="schemes.html" class="btn btn-primary btn-large">Find My Schemes</a>
+                    </div>
+                    <div class="illustration">
+                        <div class="mockup-card">
+                            <div class="pulse"></div>
+                            <i data-lucide="check-circle-2" size="48" color="var(--india-green)"></i>
+                            <h4>15 Schemes Found</h4>
+                            <p>Based on your profile</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Government Schemes -->
+        <section class="section featured-schemes bg-white">
+            <div class="container">
+                <div class="section-header flex-between">
+                    <h2>Popular Government Schemes</h2>
+                    <a href="schemes.html" class="link-view-all">View All Schemes &rarr;</a>
+                </div>
+                
+                <div class="grid scheme-grid">
+                    <div class="card scheme-card">
+                        <div class="badges">
+                            <span class="badge badge-agriculture">Agriculture</span>
+                        </div>
+                        <h3>PM-KISAN</h3>
+                        <p class="ministry-tag"><i data-lucide="building"></i> Ministry of Agriculture</p>
+                        <p class="desc">₹6,000/year income support for landholding farmer families across the country.</p>
+                        <div class="card-actions">
+                            <button class="btn btn-secondary">View Details</button>
+                            <button class="btn btn-primary">Apply Now</button>
+                        </div>
+                    </div>
+                    
+                    <div class="card scheme-card">
+                        <div class="badges">
+                            <span class="badge badge-health">Health</span>
+                        </div>
+                        <h3>Ayushman Bharat (PM-JAY)</h3>
+                        <p class="ministry-tag"><i data-lucide="building"></i> Ministry of Health</p>
+                        <p class="desc">Health cover of ₹5 lakh per family per year for secondary and tertiary care hospitalization.</p>
+                        <div class="card-actions">
+                            <button class="btn btn-secondary">View Details</button>
+                            <button class="btn btn-primary">Apply Now</button>
+                        </div>
+                    </div>
+                    
+                    <div class="card scheme-card">
+                        <div class="badges">
+                            <span class="badge badge-education">Education</span>
+                        </div>
+                        <h3>PM Scholarship Scheme</h3>
+                        <p class="ministry-tag"><i data-lucide="building"></i> Ministry of Defence</p>
+                        <p class="desc">Financial assistance to the dependent wards/widows of Ex-Servicemen & Ex-Coast Guard personnel.</p>
+                        <div class="card-actions">
+                            <button class="btn btn-secondary">View Details</button>
+                            <button class="btn btn-primary">Apply Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Me Section -->
+        <section class="section guide-me">
+            <div class="container">
+                <div class="section-header center text-white">
+                    <h2>Guide Me — Your Step-by-Step Government Journey</h2>
+                    <p>Don't know where to start? We'll guide you through every government service, step by step.</p>
+                </div>
+                
+                <div class="grid guide-grid">
+                    <a href="guide.html?journey=scholarship" class="guide-card">
+                        <div class="icon-wrap"><i data-lucide="graduation-cap"></i></div>
+                        <h4>Get a Scholarship</h4>
+                        <p>5 steps &bull; 10 mins</p>
+                    </a>
+                    <a href="guide.html?journey=business" class="guide-card">
+                        <div class="icon-wrap"><i data-lucide="rocket"></i></div>
+                        <h4>Start a Business</h4>
+                        <p>8 steps &bull; 25 mins</p>
+                    </a>
+                    <a href="guide.html?journey=birth-cert" class="guide-card">
+                        <div class="icon-wrap"><i data-lucide="clipboard-list"></i></div>
+                        <h4>Get Birth Certificate</h4>
+                        <p>4 steps &bull; 5 mins</p>
+                    </a>
+                    <a href="guide.html?journey=ration-card" class="guide-card">
+                        <div class="icon-wrap"><i data-lucide="credit-card"></i></div>
+                        <h4>Get Ration Card</h4>
+                        <p>6 steps &bull; 15 mins</p>
+                    </a>
+                    <a href="guide.html?journey=farmer-loan" class="guide-card">
+                        <div class="icon-wrap"><i data-lucide="tractor"></i></div>
+                        <h4>Apply for Farmer Loan</h4>
+                        <p>7 steps &bull; 20 mins</p>
+                    </a>
+                    <a href="guide.html?journey=pension" class="guide-card">
+                        <div class="icon-wrap"><i data-lucide="users"></i></div>
+                        <h4>Understand Pension</h4>
+                        <p>3 steps &bull; 10 mins</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- News & Updates / Spotlight -->
+        <section class="section double-column">
+            <div class="container">
+                <div class="row">
+                    <!-- News -->
+                    <div class="col-news">
+                        <div class="section-header flex-between">
+                            <h2>News & Government Updates</h2>
+                            <a href="news.html" class="link-view-all">View All News &rarr;</a>
+                        </div>
+                        <div class="news-tabs">
+                            <button class="tab active">Announcements</button>
+                            <button class="tab">Schemes</button>
+                            <button class="tab">Alerts</button>
+                        </div>
+                        <div class="news-list">
+                            <div class="news-item">
+                                <div class="news-date">
+                                    <span class="day">15</span>
+                                    <span class="month">Aug</span>
+                                </div>
+                                <div class="news-content">
+                                    <h4>Launch of PM Vishwakarma Scheme</h4>
+                                    <p class="source">Ministry of Micro, Small and Medium Enterprises</p>
+                                    <p class="summary">New scheme to support traditional artisans and craftspeople with training and credit support.</p>
+                                    <a href="#" class="read-more">Read More</a>
+                                </div>
+                            </div>
+                            <div class="news-item">
+                                <div class="news-date">
+                                    <span class="day">10</span>
+                                    <span class="month">Aug</span>
+                                </div>
+                                <div class="news-content">
+                                    <h4>Extension of Aadhaar Update Deadline</h4>
+                                    <p class="source">UIDAI</p>
+                                    <p class="summary">Free document update facility extended. Citizens are encouraged to update their details.</p>
+                                    <a href="#" class="read-more">Read More</a>
+                                </div>
+                            </div>
+                            <div class="news-item">
+                                <div class="news-date">
+                                    <span class="day">05</span>
+                                    <span class="month">Aug</span>
+                                </div>
+                                <div class="news-content">
+                                    <h4>Digital India Week 2024 Concludes</h4>
+                                    <p class="source">MeitY</p>
+                                    <p class="summary">Showcasing India's digital transformation journey and launching new citizen-centric APIs.</p>
+                                    <a href="#" class="read-more">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Spotlight & Explore -->
+                    <div class="col-spotlight">
+                        <h2>Spotlight</h2>
+                        <div class="spotlight-cards">
+                            <div class="spotlight-item di">
+                                <h4>Digital India</h4>
+                                <p>Powering to Empower</p>
+                            </div>
+                            <div class="spotlight-item si">
+                                <h4>Skill India</h4>
+                                <p>Kaushal Bharat - Kushal Bharat</p>
+                            </div>
+                            <div class="spotlight-item mii">
+                                <h4>Make in India</h4>
+                                <p>Boosting Manufacturing</p>
+                            </div>
+                        </div>
+                        
+                        <h2 class="mt-4">Explore India</h2>
+                        <div class="explore-grid">
+                            <div class="explore-card"><span>Tourism</span></div>
+                            <div class="explore-card"><span>Culture & Heritage</span></div>
+                            <div class="explore-card"><span>ODOP Initiative</span></div>
+                            <div class="explore-card"><span>Facts of India</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- State Services -->
+        <section class="section state-services bg-white">
+            <div class="container">
+                <div class="state-content center">
+                    <h2>Find Services in Your State</h2>
+                    <p>Access localized services, certificates, and schemes specific to your state or union territory.</p>
+                    
+                    <div class="state-selector">
+                        <select id="state-select" aria-label="Select your state">
+                            <option value="">-- Select Your State / UT --</option>
+                            <option value="ap">Andhra Pradesh</option>
+                            <option value="dl">Delhi</option>
+                            <option value="ka">Karnataka</option>
+                            <option value="mh">Maharashtra</option>
+                            <option value="up">Uttar Pradesh</option>
+                        </select>
+                        <span class="or-text">Or explore the interactive map</span>
+                        <a href="states.html" class="btn btn-secondary"><i data-lucide="map-pin"></i> Go to Map</a>
+                    </div>
+                    
+                    <div id="state-preview" class="state-preview hidden">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ministries Quick Access -->
+        <section class="section ministries-scroll">
+            <div class="container">
+                <h2>Ministries Quick Access</h2>
+                <div class="scroll-container">
+                    <div class="ministry-card"><i data-lucide="book-open"></i><span>Education</span><small>150+ Services</small></div>
+                    <div class="ministry-card"><i data-lucide="heart-pulse"></i><span>Health</span><small>80+ Services</small></div>
+                    <div class="ministry-card"><i data-lucide="tractor"></i><span>Agriculture</span><small>120+ Services</small></div>
+                    <div class="ministry-card"><i data-lucide="landmark"></i><span>Finance</span><small>200+ Services</small></div>
+                    <div class="ministry-card"><i data-lucide="factory"></i><span>MSME</span><small>45+ Services</small></div>
+                    <div class="ministry-card"><i data-lucide="hard-hat"></i><span>Labour</span><small>60+ Services</small></div>
+                    <div class="ministry-card"><i data-lucide="train"></i><span>Railways</span><small>30+ Services</small></div>
+                    <div class="ministry-card"><i data-lucide="globe"></i><span>External Affairs</span><small>25+ Services</small></div>
+                    <div class="ministry-card"><i data-lucide="baby"></i><span>Women & Child</span><small>55+ Services</small></div>
+                    <div class="ministry-card"><i data-lucide="cpu"></i><span>Technology</span><small>90+ Services</small></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>About</h3>
+                    <ul>
+                        <li><a href="#">About the Portal</a></li>
+                        <li><a href="#">About Digital India</a></li>
+                        <li><a href="#">National Informatics Centre</a></li>
+                        <li><a href="#">MeitY</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Find Services</a></li>
+                        <li><a href="#">Scheme Finder</a></li>
+                        <li><a href="#">Guide Me</a></li>
+                        <li><a href="#">Documents Hub</a></li>
+                        <li><a href="#">State Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="#">Bharat AI</a></li>
+                        <li><a href="#">My Dashboard</a></li>
+                        <li><a href="#">News & Updates</a></li>
+                        <li><a href="#">Help & Support</a></li>
+                        <li><a href="#">Feedback</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">RTI Portal</a></li>
+                        <li><a href="#">Data.gov.in</a></li>
+                        <li><a href="#">eProcurement</a></li>
+                        <li><a href="#">MyGov.in</a></li>
+                        <li><a href="#">DigiLocker</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>Copyright &copy; 2024 National Informatics Centre, MeitY, Government of India. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Terms of Use</a>
+                    <span class="divider">|</span>
+                    <a href="#">Privacy Policy</a>
+                    <span class="divider">|</span>
+                    <a href="#">Accessibility Statement</a>
+                </div>
+            </div>
+            <div class="tricolor-bar-bottom"></div>
+        </div>
+    </footer>
+
+    <!-- Floating Elements -->
+    <button class="scroll-top" aria-label="Scroll to top"><i data-lucide="arrow-up"></i></button>
+    <div class="accessibility-trigger" aria-label="Accessibility Settings"><i data-lucide="settings-2"></i></div>
+    <button class="bharat-ai-btn" aria-label="Open Bharat AI Assistant">
+        <i data-lucide="sparkles"></i>
+        <span>Bharat AI</span>
+    </button>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+        
+        // Rotating placeholder text for hero search
+        const placeholders = [
+            'Find "PM Kisan Yojana"',
+            'Apply for Passport',
+            'Download Aadhaar',
+            'Register MSME',
+            'Scholarship status'
+        ];
+        let pIndex = 0;
+        const rotatingText = document.getElementById('rotating-text');
+        
+        setInterval(() => {
+            rotatingText.style.opacity = 0;
+            setTimeout(() => {
+                pIndex = (pIndex + 1) % placeholders.length;
+                rotatingText.textContent = placeholders[pIndex];
+                rotatingText.style.opacity = 1;
+            }, 300);
+        }, 3000);
+
+        // State selector demo
+        const stateSelect = document.getElementById('state-select');
+        const statePreview = document.getElementById('state-preview');
+        
+        stateSelect.addEventListener('change', (e) => {
+            if(e.target.value) {
+                statePreview.classList.remove('hidden');
+                statePreview.innerHTML = `
+                    <div class="state-services-demo">
+                        <h4>Popular services in ${e.target.options[e.target.selectedIndex].text}</h4>
+                        <div class="tags">
+                            <span class="tag">Birth Certificate</span>
+                            <span class="tag">Property Tax</span>
+                            <span class="tag">Land Records</span>
+                        </div>
+                    </div>
+                `;
+            } else {
+                statePreview.classList.add('hidden');
+            }
+        });
+
+        // Scroll to top visibility
+        const scrollTopBtn = document.querySelector('.scroll-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.style.opacity = '1';
+                scrollTopBtn.style.pointerEvents = 'auto';
+            } else {
+                scrollTopBtn.style.opacity = '0';
+                scrollTopBtn.style.pointerEvents = 'none';
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documents & Service Hub | Bharat Connect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+</head>
+<body>
+    <!-- Gov Bar & Nav -->
+    <div class="gov-bar" style="background: #1B3A5C; color: white; font-size: 13px; padding: 5px 5%;">
+        <div style="display: flex; justify-content: space-between; max-width: 1400px; margin: 0 auto;">
+            <span>Government of India | NIC | MeitY | Digital India</span>
+            <div style="display: flex; gap: 15px;">
+                <a href="#main-content" style="color: white; text-decoration: none;">Skip to Content</a>
+                <a href="#" style="color: white; text-decoration: none;">English | हिन्दी</a>
+            </div>
+        </div>
+    </div>
+    
+    <nav style="background: #0D2137; color: white; padding: 15px 5%;">
+        <div style="display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: 0 auto;">
+            <div class="logo" style="font-size: 1.5rem; font-weight: 700;">
+                <a href="index.html" style="color: white; text-decoration: none;">Bharat <span style="color: #FF9933;">Connect</span></a>
+            </div>
+            <div style="display: flex; gap: 20px; align-items: center;">
+                <a href="index.html" style="color: white; text-decoration: none;">Home</a>
+                <a href="services.html" style="color: white; text-decoration: none; font-weight: bold; border-bottom: 2px solid #FF9933;">Services</a>
+                <a href="states.html" style="color: white; text-decoration: none;">States</a>
+                <a href="explore.html" style="color: white; text-decoration: none;">Explore</a>
+                <i data-lucide="search" style="cursor: pointer;"></i>
+            </div>
+        </div>
+    </nav>
+    <div style="height: 4px; background: linear-gradient(to right, #FF9933 33%, #FFFFFF 33%, #FFFFFF 67%, #138808 67%);"></div>
+
+    <main id="main-content">
+        <section class="page-hero">
+            <h1>📄 Documents & Service Hub</h1>
+            <p>Find and understand every government document service in one place.</p>
+        </section>
+
+        <div class="tabs-container">
+            <div class="tabs" id="category-tabs">
+                <button class="tab active" data-category="All">🔍 All</button>
+                <button class="tab" data-category="Identity">👤 Identity</button>
+                <button class="tab" data-category="Certificates">📋 Certificates</button>
+                <button class="tab" data-category="Business">💼 Business</button>
+                <button class="tab" data-category="Property">🏠 Property</button>
+                <button class="tab" data-category="Transport">🚗 Transport</button>
+            </div>
+        </div>
+
+        <section class="services-section">
+            <div class="services-grid" id="services-grid">
+                <!-- Populated via JS -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Service Detail Modal -->
+    <div class="modal-overlay" id="service-modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()"><i data-lucide="x" style="width: 24px; height: 24px;"></i></button>
+            <div class="modal-header">
+                <h2 id="m-title">Service Name</h2>
+                <p id="m-ministry">Ministry Name</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3><i data-lucide="info"></i> What is this service?</h3>
+                    <p id="m-desc">Description goes here.</p>
+                </div>
+                <div class="modal-section">
+                    <h3><i data-lucide="users"></i> Eligibility</h3>
+                    <p id="m-eligibility">Eligibility details.</p>
+                </div>
+                <div class="modal-section">
+                    <h3><i data-lucide="file-check"></i> Required Documents</h3>
+                    <ul class="doc-list" id="m-docs">
+                        <!-- Populated via JS -->
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3><i data-lucide="list-ordered"></i> Process Steps</h3>
+                    <ol class="step-list" id="m-steps">
+                        <!-- Populated via JS -->
+                    </ol>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="fees-info" id="m-fees">Fees: ₹0</div>
+                <a href="#" class="btn-primary" id="m-link" target="_blank">Apply on Official Portal <i data-lucide="external-link" style="width: 16px; height: 16px; vertical-align: middle; margin-left: 5px;"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background: var(--navy-900, #0D2137); color: white; padding: 3rem 5% 1rem 5%; margin-top: auto;">
+        <div style="text-align: center; color: var(--gray-200); font-size: 0.8rem;">
+            <p>&copy; 2026 Government of India. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const servicesData = [
+            { id: 1, name: 'Aadhaar Card Enrolment', category: 'Identity', ministry: 'UIDAI', desc: 'Apply for a new Aadhaar card or update existing details.', time: '15-30 Days', docsCount: 2, icon: 'fingerprint',
+              eligibility: 'Any resident of India including NRIs and foreign nationals residing in India for over 182 days.',
+              docs: ['Proof of Identity (POI) e.g. Voter ID, Passport', 'Proof of Address (POA) e.g. Utility Bill, Bank Statement'],
+              steps: ['Visit nearest Aadhaar Enrolment Centre', 'Fill the Enrolment Form', 'Submit demographic and biometric data', 'Collect acknowledgment slip'],
+              fees: 'Free for new enrolment. ₹50 for updates.', link: 'https://uidai.gov.in/' },
+            { id: 2, name: 'PAN Card Application', category: 'Identity', ministry: 'Income Tax Department', desc: 'Apply for Permanent Account Number for financial transactions.', time: '10-15 Days', docsCount: 3, icon: 'credit-card',
+              eligibility: 'All Indian citizens, NRIs, and foreign entities paying tax in India.',
+              docs: ['Aadhaar Card', 'Passport size photographs', 'Signature/Thumb impression'],
+              steps: ['Go to NSDL or UTIITSL portal', 'Fill Form 49A', 'Pay application fee', 'Submit physical or e-KYC documents'],
+              fees: '₹107 (for Indian communication address)', link: 'https://www.incometax.gov.in/' },
+            { id: 3, name: 'Driving License', category: 'Transport', ministry: 'Ministry of Road Transport', desc: 'Apply for Learner or Permanent Driving License.', time: '30 Days', docsCount: 4, icon: 'car',
+              eligibility: '18+ years for LMV, 16+ for gearless 2-wheelers (with consent).',
+              docs: ['Age Proof', 'Address Proof', 'Medical Certificate (Form 1A)', 'Passport Photos'],
+              steps: ['Apply for Learner License online', 'Pass online test', 'Practice for 30 days', 'Apply and pass practical driving test'],
+              fees: 'Varies by state (approx ₹200-₹1000)', link: 'https://parivahan.gov.in/' },
+            { id: 4, name: 'Birth Certificate', category: 'Certificates', ministry: 'Local Municipal Corporation', desc: 'Official record of birth, required for various basic rights.', time: '7-14 Days', docsCount: 2, icon: 'baby',
+              eligibility: 'Must be registered within 21 days of birth.',
+              docs: ['Hospital Discharge slip/Proof of birth', 'Identity proof of parents'],
+              steps: ['Collect form from hospital/municipality', 'Fill details of child and parents', 'Submit with documents', 'Collect certificate after verification'],
+              fees: 'Free within 21 days. Late fees apply later.', link: 'https://crsorgi.gov.in/' },
+            { id: 5, name: 'MSME Udyam Registration', category: 'Business', ministry: 'Ministry of MSME', desc: 'Register your micro, small or medium enterprise.', time: 'Instant', docsCount: 1, icon: 'briefcase',
+              eligibility: 'Any individual intending to establish a micro, small or medium enterprise.',
+              docs: ['Aadhaar Number of the proprietor/director'],
+              steps: ['Visit Udyam Registration portal', 'Enter Aadhaar and verify via OTP', 'Fill enterprise details', 'Submit to generate Udyam Certificate instantly'],
+              fees: 'Free of cost', link: 'https://udyamregistration.gov.in/' },
+            { id: 6, name: 'Passport Application', category: 'Identity', ministry: 'Ministry of External Affairs', desc: 'Apply for a new passport or renew existing one.', time: '15-45 Days', docsCount: 3, icon: 'plane',
+              eligibility: 'Indian citizens.',
+              docs: ['Proof of Address', 'Proof of Date of Birth', 'Non-ECR Proof (Educational Certs)'],
+              steps: ['Register on Passport Seva portal', 'Fill application form', 'Schedule appointment and pay fee', 'Visit PSK for verification', 'Police Verification'],
+              fees: '₹1500 for normal 36-page booklet', link: 'https://passportindia.gov.in/' },
+            { id: 7, name: 'GST Registration', category: 'Business', ministry: 'CBIC', desc: 'Register for Goods and Services Tax.', time: '3-7 Days', docsCount: 5, icon: 'receipt',
+              eligibility: 'Businesses with turnover exceeding ₹40 lakhs (₹20 lakhs for special states).',
+              docs: ['PAN of applicant', 'Aadhaar Card', 'Proof of business registration', 'Address proof of business', 'Bank Account details'],
+              steps: ['Go to GST Portal', 'Fill Part A of Form GST REG-01', 'Receive TRN', 'Fill Part B and upload documents', 'Verification and issuance of certificate'],
+              fees: 'Free of cost', link: 'https://www.gst.gov.in/' }
+        ];
+
+        const grid = document.getElementById('services-grid');
+        const tabs = document.querySelectorAll('.tab');
+        const modal = document.getElementById('service-modal');
+
+        function renderCards(filter = 'All') {
+            grid.innerHTML = '';
+            const filtered = filter === 'All' ? servicesData : servicesData.filter(s => s.category === filter);
+            
+            filtered.forEach(service => {
+                const card = document.createElement('div');
+                card.className = 'service-card';
+                card.innerHTML = `
+                    <div class="card-header">
+                        <div class="icon-box"><i data-lucide="${service.icon}"></i></div>
+                        <div>
+                            <h3 class="card-title">${service.name}</h3>
+                            <span class="category-badge">${service.category}</span>
+                        </div>
+                    </div>
+                    <p class="card-desc">${service.desc}</p>
+                    <div class="card-meta">
+                        <div class="meta-chip"><i data-lucide="clock"></i> ${service.time}</div>
+                        <div class="meta-chip"><i data-lucide="file-text"></i> ${service.docsCount} Docs</div>
+                    </div>
+                    <button class="btn-learn-more" onclick="openModal(${service.id})">Learn More</button>
+                `;
+                grid.appendChild(card);
+            });
+            lucide.createIcons();
+        }
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                renderCards(tab.getAttribute('data-category'));
+            });
+        });
+
+        function openModal(id) {
+            const service = servicesData.find(s => s.id === id);
+            if(!service) return;
+
+            document.getElementById('m-title').textContent = service.name;
+            document.getElementById('m-ministry').textContent = service.ministry;
+            document.getElementById('m-desc').textContent = service.desc;
+            document.getElementById('m-eligibility').textContent = service.eligibility;
+            document.getElementById('m-fees').textContent = `Fees: ${service.fees}`;
+            document.getElementById('m-link').href = service.link;
+            
+            document.getElementById('m-docs').innerHTML = service.docs.map(d => `<li><i data-lucide="check-square"></i> ${d}</li>`).join('');
+            document.getElementById('m-steps').innerHTML = service.steps.map(s => `<li>${s}</li>`).join('');
+            
+            lucide.createIcons();
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        modal.addEventListener('click', (e) => {
+            if(e.target === modal) closeModal();
+        });
+
+        // Initialize
+        renderCards();
+    </script>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

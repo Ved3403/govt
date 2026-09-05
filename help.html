@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help & Support | Bharat Connect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/main.css">
+    
+</head>
+<body>
+    <div class="gov-bar">
+        <div class="container">
+            <span>Government of India | NIC | MeitY | Digital India</span>
+            <div class="gov-actions">
+                <a href="#main-content">Skip to Content</a>
+                <button aria-label="Accessibility Options"><i data-lucide="eye"></i></button>
+                <select aria-label="Language Select"><option>English</option><option>हिन्दी</option></select>
+            </div>
+        </div>
+    </div>
+    
+    <nav class="main-nav">
+        <div class="container" style="display: flex; align-items: center; justify-content: space-between; padding: 16px 0;">
+            <a href="index.html" class="logo" style="color: white; font-weight: bold; text-decoration: none; font-size: 20px;">Bharat Connect</a>
+            <div class="nav-links" style="display: flex; gap: 24px;">
+                <a href="index.html" style="color: white; text-decoration: none;">Home</a>
+                <a href="dashboard.html" style="color: white; text-decoration: none;">My Dashboard</a>
+                <a href="ministries.html" style="color: white; text-decoration: none;">Ministries</a>
+                <a href="news.html" style="color: white; text-decoration: none;">News</a>
+                <a href="help.html" style="color: white; text-decoration: none; font-weight: bold;">Help</a>
+            </div>
+        </div>
+    </nav>
+    <div class="tricolor-bar">
+        <div class="saffron"></div>
+        <div class="white"></div>
+        <div class="green"></div>
+    </div>
+
+    <main id="main-content" class="container">
+        <div class="page-hero">
+            <h1>🤝 Help & Support</h1>
+            <p>We're here to help you find government information and services.</p>
+        </div>
+
+        <div class="quick-actions">
+            <a href="#bharat-ai" class="qa-card">
+                <div class="qa-icon">🧠</div>
+                <div class="qa-title">Ask Bharat AI</div>
+            </a>
+            <a href="#faqs" class="qa-card">
+                <div class="qa-icon">❓</div>
+                <div class="qa-title">Browse FAQs</div>
+            </a>
+            <a href="#directory" class="qa-card">
+                <div class="qa-icon">📞</div>
+                <div class="qa-title">Helpline Directory</div>
+            </a>
+            <a href="#" class="qa-card">
+                <div class="qa-icon">📍</div>
+                <div class="qa-title">Find Government Office</div>
+            </a>
+        </div>
+
+        <h2 id="bharat-ai" style="margin-bottom: 16px; color: var(--navy-900);">Bharat AI Assistant</h2>
+        <div class="ai-panel">
+            <div class="ai-header">
+                <i data-lucide="bot"></i>
+                <div style="font-weight: 600;">Bharat AI</div>
+            </div>
+            <div class="ai-chat" id="chat-window">
+                <div class="msg bot">Namaste! 🙏 I am Bharat AI. How can I assist you with government services today?</div>
+            </div>
+            <div class="suggested-chips">
+                <div class="chip" onclick="sendMsg('How do I apply for a scholarship?')">Scholarships</div>
+                <div class="chip" onclick="sendMsg('What are the schemes for farmers?')">Farmer Schemes</div>
+                <div class="chip" onclick="sendMsg('Documents needed for passport?')">Passport Application</div>
+                <div class="chip" onclick="sendMsg('How to update Aadhaar?')">Aadhaar Update</div>
+                <div class="chip" onclick="sendMsg('How to register a startup?')">Business/Startup</div>
+            </div>
+            <div class="ai-input">
+                <button style="background: var(--gray-100); color: var(--navy-900);"><i data-lucide="mic"></i></button>
+                <input type="text" id="ai-input-text" placeholder="Type your question here...">
+                <button onclick="handleSend()"><i data-lucide="send" style="width: 16px;"></i> Send</button>
+            </div>
+            <div class="ai-disclaimer">
+                Bharat AI provides guidance only. For official applications, always visit the respective official government portal.
+            </div>
+        </div>
+
+        <h2 id="faqs" style="margin-bottom: 16px; color: var(--navy-900);">Frequently Asked Questions</h2>
+        <div class="faq-section">
+            <div class="accordion-item">
+                <div class="accordion-header">1. How do I find schemes I'm eligible for? <i data-lucide="chevron-down"></i></div>
+                <div class="accordion-content">You can use our 'Discover Schemes' tool on the homepage or dashboard. By setting up your profile with your age, state, and occupation, the portal automatically recommends schemes tailored for you.</div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">2. How do I apply for Ayushman Bharat? <i data-lucide="chevron-down"></i></div>
+                <div class="accordion-content">You can check your eligibility on the PMJAY portal (pmjay.gov.in) using your mobile number or ration card. If eligible, you can get your e-card generated at the nearest Common Service Centre (CSC) or empanelled hospital.</div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">3. What is PM-KISAN and who is eligible? <i data-lucide="chevron-down"></i></div>
+                <div class="accordion-content">PM-KISAN is a central sector scheme that provides ₹6,000 per year (in 3 installments) to all landholding farmer families. You can apply directly on the pmkisan.gov.in portal.</div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">4. How do I get a birth certificate? <i data-lucide="chevron-down"></i></div>
+                <div class="accordion-content">Birth registration is handled by local authorities (Municipal Corporation/Gram Panchayat). You can apply through your respective State e-District portal or crsorgi.gov.in.</div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">5. How do I register my business as MSME? <i data-lucide="chevron-down"></i></div>
+                <div class="accordion-content">You can register for Udyam Registration completely free of cost on the official udyamregistration.gov.in portal using only your Aadhaar and PAN card.</div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">6. What documents do I need for a passport? <i data-lucide="chevron-down"></i></div>
+                <div class="accordion-content">Generally, you need Proof of Address (like Aadhaar, Voter ID) and Proof of Date of Birth (like Birth Certificate, 10th Marks card). Visit passportindia.gov.in for the exact list.</div>
+            </div>
+        </div>
+
+        <h2 id="directory" style="margin-bottom: 16px; color: var(--navy-900);">Important Helplines</h2>
+        <table class="helpline-table">
+            <thead>
+                <tr>
+                    <th>Service</th>
+                    <th>Helpline Number</th>
+                    <th>Operating Hours</th>
+                    <th>Website</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>PM Kisan</td><td><strong>155261 / 1800115526</strong></td><td>Mon-Fri, 9AM-6PM</td><td>pmkisan.gov.in</td></tr>
+                <tr><td>Ayushman Bharat</td><td><strong>14555</strong></td><td>24/7</td><td>pmjay.gov.in</td></tr>
+                <tr><td>Aadhaar (UIDAI)</td><td><strong>1947</strong></td><td>24/7 (IVRS)</td><td>uidai.gov.in</td></tr>
+                <tr><td>GST Helpdesk</td><td><strong>1800-103-4786</strong></td><td>9AM-9PM</td><td>gst.gov.in</td></tr>
+                <tr><td>Passport Seva</td><td><strong>1800-258-1800</strong></td><td>8AM-10PM</td><td>passportindia.gov.in</td></tr>
+                <tr><td>National Housing Bank</td><td><strong>1800-11-3377</strong></td><td>Mon-Fri, 10AM-5PM</td><td>nhb.org.in</td></tr>
+            </tbody>
+        </table>
+
+        <div class="feedback-section">
+            <div>
+                <h3 style="margin-bottom: 16px;">Grievance & Feedback</h3>
+                <p style="color: var(--gray-600); margin-bottom: 24px; line-height: 1.6;">Found incorrect information? Or want to raise an official grievance with a department? Use the CPGRAMS portal for official complaints, or leave feedback for this website here.</p>
+                <a href="#" style="display: inline-block; padding: 12px 24px; background: transparent; border: 2px solid var(--navy-700); color: var(--navy-700); text-decoration: none; font-weight: 600; border-radius: 8px;">File Grievance on CPGRAMS ↗</a>
+            </div>
+            <div class="feedback-form">
+                <input type="text" placeholder="Your Name (Optional)">
+                <input type="email" placeholder="Email Address">
+                <textarea rows="4" placeholder="How can we improve your experience on Bharat Connect?"></textarea>
+                <button>Submit Feedback</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div style="text-align: center; padding: 24px 0; border-top: 1px solid var(--gray-600); font-size: 14px; color: var(--gray-200);">
+                © 2024 Government of India. Designed for Bharat Connect.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+        
+        // Accordion logic
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+        // AI Chat logic
+        const chatWindow = document.getElementById('chat-window');
+        const aiInput = document.getElementById('ai-input-text');
+
+        function appendMsg(text, sender) {
+            const div = document.createElement('div');
+            div.className = `msg ${sender}`;
+            div.textContent = text;
+            chatWindow.appendChild(div);
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+        }
+
+        function getBotResponse(input) {
+            const q = input.toLowerCase();
+            if (q.includes('scholarship')) return "For scholarships, you should visit the National Scholarship Portal (NSP). Key schemes include Pre-Matric, Post-Matric, and Merit-cum-Means scholarships. You will need your Aadhaar, bank details, and income certificate.";
+            if (q.includes('farmer') || q.includes('kisan')) return "Key schemes for farmers include PM-KISAN (₹6000/year income support), Kisan Credit Card (concessional credit), and PM Fasal Bima Yojana (crop insurance). Visit pmkisan.gov.in for PM-KISAN details.";
+            if (q.includes('passport')) return "To apply for a passport, visit passportindia.gov.in, register, fill the form, pay the fee, and book an appointment at a Passport Seva Kendra (PSK). You generally need an address proof (Aadhaar/Voter ID) and Date of Birth proof.";
+            if (q.includes('aadhaar')) return "You can update your Aadhaar details online at myaadhaar.uidai.gov.in or visit a nearby Aadhaar Seva Kendra. Demographic updates like name, address, DOB can be done online. Biometric updates require a center visit.";
+            if (q.includes('pension')) return "Major pension schemes include Atal Pension Yojana (APY) for unorganized sector, National Pension System (NPS), and EPFO pension for salaried employees. You can enroll for APY through your bank.";
+            if (q.includes('business') || q.includes('startup')) return "To start a business, you can register under Startup India for benefits, get Udyam (MSME) registration for free at udyamregistration.gov.in, and apply for GST registration if your turnover crosses the threshold.";
+            if (q.includes('housing') || q.includes('pmay')) return "Pradhan Mantri Awas Yojana (PMAY) provides affordable housing. It has Urban and Gramin components. You can apply through pmaymis.gov.in (Urban) or through your Gram Panchayat (Rural).";
+            return "I can help you find government services and schemes. Try asking about scholarships, health schemes, farming support, business registration, or any government service.";
+        }
+
+        function sendMsg(text) {
+            if (!text.trim()) return;
+            appendMsg(text, 'user');
+            setTimeout(() => {
+                appendMsg(getBotResponse(text), 'bot');
+            }, 600);
+        }
+
+        function handleSend() {
+            sendMsg(aiInput.value);
+            aiInput.value = '';
+        }
+
+        aiInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') handleSend();
+        });
+    </script>
+
+    <script src="js/data.js"></script>
+</body>
+</html>

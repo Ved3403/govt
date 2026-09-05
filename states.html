@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State Services | Bharat Connect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+</head>
+<body>
+    <!-- Gov Bar -->
+    <div class="gov-bar" style="background: #1B3A5C; color: white; font-size: 13px; padding: 5px 5%;">
+        <div style="display: flex; justify-content: space-between; max-width: 1400px; margin: 0 auto;">
+            <span>Government of India | NIC | MeitY | Digital India</span>
+            <div style="display: flex; gap: 15px;">
+                <a href="#main-content" style="color: white; text-decoration: none;">Skip to Content</a>
+                <a href="#" style="color: white; text-decoration: none;">A- | A | A+</a>
+                <a href="#" style="color: white; text-decoration: none;">English | हिन्दी</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Nav -->
+    <nav style="background: #0D2137; color: white; padding: 15px 5%;">
+        <div style="display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: 0 auto;">
+            <div class="logo" style="font-size: 1.5rem; font-weight: 700;">
+                <a href="index.html" style="color: white; text-decoration: none;">Bharat <span style="color: #FF9933;">Connect</span></a>
+            </div>
+            <div style="display: flex; gap: 20px; align-items: center;">
+                <a href="index.html" style="color: white; text-decoration: none;">Home</a>
+                <a href="services.html" style="color: white; text-decoration: none;">Services</a>
+                <a href="states.html" style="color: white; text-decoration: none; font-weight: bold; border-bottom: 2px solid #FF9933;">States</a>
+                <a href="explore.html" style="color: white; text-decoration: none;">Explore</a>
+                <i data-lucide="search" style="cursor: pointer;"></i>
+            </div>
+        </div>
+    </nav>
+    <div style="height: 4px; background: linear-gradient(to right, #FF9933 33%, #FFFFFF 33%, #FFFFFF 67%, #138808 67%);"></div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <section class="page-hero">
+            <h1>State & UT Services</h1>
+            <p>Select your state or Union Territory to discover local government services, portals and schemes.</p>
+        </section>
+
+        <section class="states-container">
+            <div class="map-column">
+                <div class="map-tooltip" id="map-tooltip">State Name</div>
+                <!-- Stylized representation of India map using SVG primitives for demonstration -->
+                <svg viewBox="0 0 400 500" class="india-map" id="india-map">
+                    <!-- North -->
+                    <circle cx="160" cy="80" r="30" data-state="JK" />
+                    <circle cx="190" cy="110" r="25" data-state="HP" />
+                    <circle cx="150" cy="130" r="25" data-state="PB" />
+                    <circle cx="190" cy="150" r="25" data-state="HR" />
+                    <circle cx="210" cy="160" r="15" data-state="DL" />
+                    <circle cx="230" cy="130" r="25" data-state="UK" />
+                    <polygon points="210,180 280,180 300,240 230,240" data-state="UP" />
+                    <polygon points="120,160 190,180 180,260 100,240" data-state="RJ" />
+                    
+                    <!-- Central/West -->
+                    <polygon points="90,250 160,270 140,320 70,300" data-state="GJ" />
+                    <polygon points="170,270 240,250 250,320 180,330" data-state="MP" />
+                    <polygon points="130,330 200,340 180,400 100,380" data-state="MH" />
+                    <polygon points="250,250 300,260 280,320 240,320" data-state="BR" />
+                    <polygon points="260,330 310,320 300,380 240,380" data-state="JH" />
+                    <polygon points="200,350 250,340 240,400 180,410" data-state="CG" />
+                    
+                    <!-- East/NE -->
+                    <polygon points="310,260 350,250 360,300 320,320" data-state="WB" />
+                    <polygon points="300,330 350,320 330,380 270,390" data-state="OD" />
+                    <circle cx="360" cy="200" r="20" data-state="SK" />
+                    <circle cx="390" cy="220" r="20" data-state="AS" />
+                    <circle cx="430" cy="210" r="18" data-state="AR" />
+                    <circle cx="410" cy="250" r="15" data-state="ML" />
+                    
+                    <!-- South -->
+                    <polygon points="120,400 180,410 160,470 100,450" data-state="KA" />
+                    <polygon points="180,420 240,400 220,470 160,480" data-state="TG" />
+                    <polygon points="230,410 280,390 260,460 210,480" data-state="AP" />
+                    <polygon points="110,460 150,480 140,530 90,510" data-state="KL" />
+                    <polygon points="160,490 220,470 200,540 140,530" data-state="TN" />
+                </svg>
+                <p style="margin-top: 1rem; color: var(--gray-600); font-size: 0.9rem;">Interactive Map: Click on a region to view state details.</p>
+                
+                <select class="mobile-dropdown" id="state-select">
+                    <option value="">Select a State / UT</option>
+                    <option value="MH">Maharashtra</option>
+                    <option value="UP">Uttar Pradesh</option>
+                    <option value="KA">Karnataka</option>
+                    <option value="TN">Tamil Nadu</option>
+                    <option value="GJ">Gujarat</option>
+                    <option value="RJ">Rajasthan</option>
+                    <option value="DL">Delhi</option>
+                    <option value="WB">West Bengal</option>
+                    <option value="AP">Andhra Pradesh</option>
+                    <option value="KL">Kerala</option>
+                </select>
+            </div>
+
+            <div class="info-column">
+                <div class="default-panel" id="default-panel">
+                    <i data-lucide="map"></i>
+                    <h3>Explore Local Services</h3>
+                    <p>Select a state on the map or from the dropdown to explore region-specific services, portals, and schemes.</p>
+                </div>
+                
+                <div class="state-panel" id="state-details">
+                    <h2 id="st-name">State Name</h2>
+                    <p class="capital" id="st-capital">Capital: City Name</p>
+                    <a href="#" class="btn-primary" id="st-portal" target="_blank">Official State Portal <i data-lucide="external-link" style="width:16px;height:16px;vertical-align:middle;margin-left:5px;"></i></a>
+                    
+                    <h3>Popular Services</h3>
+                    <ul class="service-list" id="st-services">
+                        <!-- Populated via JS -->
+                    </ul>
+                    
+                    <h3>State Schemes</h3>
+                    <div class="scheme-cards" id="st-schemes">
+                        <!-- Populated via JS -->
+                    </div>
+                    
+                    <h3>Key Departments</h3>
+                    <div class="badge-container" id="st-depts">
+                        <!-- Populated via JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="state-grid-section">
+            <h2>Popular State Portals</h2>
+            <div class="state-grid">
+                <div class="state-card">
+                    <h3>Maharashtra</h3>
+                    <p>Capital: Mumbai</p>
+                    <p>Aaple Sarkar Portal - 400+ Services</p>
+                    <button class="btn-outline" onclick="selectState('MH')">Explore</button>
+                </div>
+                <div class="state-card">
+                    <h3>Uttar Pradesh</h3>
+                    <p>Capital: Lucknow</p>
+                    <p>eDistrict UP - 250+ Services</p>
+                    <button class="btn-outline" onclick="selectState('UP')">Explore</button>
+                </div>
+                <div class="state-card">
+                    <h3>Karnataka</h3>
+                    <p>Capital: Bengaluru</p>
+                    <p>Seva Sindhu - 300+ Services</p>
+                    <button class="btn-outline" onclick="selectState('KA')">Explore</button>
+                </div>
+                <div class="state-card">
+                    <h3>Tamil Nadu</h3>
+                    <p>Capital: Chennai</p>
+                    <p>TNeGA - e-Sevai Portal</p>
+                    <button class="btn-outline" onclick="selectState('TN')">Explore</button>
+                </div>
+                <div class="state-card">
+                    <h3>Gujarat</h3>
+                    <p>Capital: Gandhinagar</p>
+                    <p>Digital Gujarat - 150+ Services</p>
+                    <button class="btn-outline" onclick="selectState('GJ')">Explore</button>
+                </div>
+                <div class="state-card">
+                    <h3>Delhi</h3>
+                    <p>Capital: New Delhi</p>
+                    <p>e-District Delhi - 100+ Services</p>
+                    <button class="btn-outline" onclick="selectState('DL')">Explore</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="background: var(--navy-900, #0D2137); color: white; padding: 3rem 5% 1rem 5%; margin-top: auto;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; max-width: 1400px; margin: 0 auto; margin-bottom: 2rem;">
+            <div>
+                <h3 style="margin-bottom: 1rem;">About Portal</h3>
+                <p style="color: var(--gray-200); font-size: 0.9rem; line-height: 1.6;">Bharat Connect is the National Portal of India, providing a single window access to information and services being provided by the various Indian Government entities.</p>
+            </div>
+            <div>
+                <h3 style="margin-bottom: 1rem;">Key Services</h3>
+                <ul style="list-style: none; padding: 0; color: var(--gray-200); line-height: 2;">
+                    <li><a href="#" style="color: inherit; text-decoration: none;">Aadhaar Services</a></li>
+                    <li><a href="#" style="color: inherit; text-decoration: none;">PAN Services</a></li>
+                    <li><a href="#" style="color: inherit; text-decoration: none;">Passport Seva</a></li>
+                    <li><a href="#" style="color: inherit; text-decoration: none;">Voter ID</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 style="margin-bottom: 1rem;">Quick Links</h3>
+                <ul style="list-style: none; padding: 0; color: var(--gray-200); line-height: 2;">
+                    <li><a href="#" style="color: inherit; text-decoration: none;">MyGov</a></li>
+                    <li><a href="#" style="color: inherit; text-decoration: none;">Digital India</a></li>
+                    <li><a href="#" style="color: inherit; text-decoration: none;">Incredible India</a></li>
+                    <li><a href="#" style="color: inherit; text-decoration: none;">Data.gov.in</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 style="margin-bottom: 1rem;">Connect</h3>
+                <p style="color: var(--gray-200); font-size: 0.9rem;">Toll Free Help Desk:<br>1800-111-555</p>
+                <div style="display: flex; gap: 10px; margin-top: 1rem;">
+                    <i data-lucide="twitter" style="color: white;"></i>
+                    <i data-lucide="facebook" style="color: white;"></i>
+                    <i data-lucide="youtube" style="color: white;"></i>
+                </div>
+            </div>
+        </div>
+        <div style="border-top: 1px solid var(--navy-700); padding-top: 1rem; text-align: center; color: var(--gray-200); font-size: 0.8rem;">
+            <p>&copy; 2026 Government of India. All rights reserved. Designed and developed by NIC.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        const stateData = {
+            'MH': { name: 'Maharashtra', capital: 'Mumbai', portal: 'https://aaplesarkar.mahaonline.gov.in/', services: ['Income Certificate', 'Age, Nationality & Domicile', 'Senior Citizen Certificate', 'Agriculture Schemes', 'Ration Card'], schemes: [{name: 'Mahatma Jyotirao Phule Jan Arogya Yojana', desc: 'Health insurance scheme'}, {name: 'Sanjay Gandhi Niradhar Anudan', desc: 'Financial assistance to destitute'}], depts: ['Revenue', 'Agriculture', 'Public Health', 'Education'] },
+            'UP': { name: 'Uttar Pradesh', capital: 'Lucknow', portal: 'https://edistrict.up.gov.in/', services: ['Caste Certificate', 'Income Certificate', 'Domicile Certificate', 'Birth/Death Certificate', 'Pension Schemes'], schemes: [{name: 'Kanya Sumangala Yojana', desc: 'Financial help for girl child'}, {name: 'Vishwakarma Shram Samman', desc: 'Support for traditional artisans'}], depts: ['Revenue', 'Social Welfare', 'Basic Education'] },
+            'KA': { name: 'Karnataka', capital: 'Bengaluru', portal: 'https://sevasindhu.karnataka.gov.in/', services: ['Nadakacheri Services', 'Ration Card Services', 'Police Verification', 'Land Records (Bhoomi)', 'Transport Services'], schemes: [{name: 'Gruha Lakshmi', desc: 'Financial aid to women heads of family'}, {name: 'Yuva Nidhi', desc: 'Unemployment allowance'}], depts: ['Revenue', 'Women & Child', 'Transport'] },
+            'TN': { name: 'Tamil Nadu', capital: 'Chennai', portal: 'https://www.tnesevai.tn.gov.in/', services: ['Community Certificate', 'Nativity Certificate', 'Income Certificate', 'First Graduate Certificate', 'Legal Heir Certificate'], schemes: [{name: 'Chief Minister\'s Comprehensive Health Insurance', desc: 'Medical insurance'}, {name: 'Pudhumai Penn', desc: 'Higher education aid for girls'}], depts: ['Revenue', 'Health', 'School Education'] },
+            'GJ': { name: 'Gujarat', capital: 'Gandhinagar', portal: 'https://www.digitalgujarat.gov.in/', services: ['Non-Creamy Layer Certificate', 'Income Certificate', 'Widow Certificate', 'SEBC Certificate', 'Student Scholarships'], schemes: [{name: 'Mukhyamantri Amrutam', desc: 'Tertiary care treatment'}, {name: 'Vahli Dikri Yojana', desc: 'Girl child welfare'}], depts: ['Social Justice', 'Health', 'Revenue'] },
+            'RJ': { name: 'Rajasthan', capital: 'Jaipur', portal: 'https://sso.rajasthan.gov.in/', services: ['Bonafide Certificate', 'Caste Certificate', 'EWS Certificate', 'Jan Aadhaar Services', 'Utility Bills'], schemes: [{name: 'Chiranjeevi Health Insurance', desc: 'Universal health coverage'}, {name: 'Indira Gandhi Smart Phone', desc: 'Smartphones for women'}], depts: ['IT & C', 'Medical & Health', 'Revenue'] },
+            'DL': { name: 'Delhi', capital: 'New Delhi', portal: 'https://edistrict.delhigovt.nic.in/', services: ['Income Certificate', 'Caste Certificate', 'Domicile Certificate', 'Marriage Registration', 'Birth/Death Certificate'], schemes: [{name: 'Farishtey Dilli Ke', desc: 'Free treatment for accident victims'}, {name: 'Chief Minister Relief Fund', desc: 'Financial assistance'}], depts: ['Revenue', 'Transport', 'Social Welfare'] }
+        };
+
+        const mapElements = document.querySelectorAll('.india-map polygon, .india-map circle');
+        const tooltip = document.getElementById('map-tooltip');
+        const defaultPanel = document.getElementById('default-panel');
+        const stateDetails = document.getElementById('state-details');
+        const stateSelect = document.getElementById('state-select');
+
+        function selectState(stateCode) {
+            if(!stateData[stateCode]) return;
+            
+            // Update active state in map
+            mapElements.forEach(el => el.classList.remove('active'));
+            const mapEl = document.querySelector(`[data-state="${stateCode}"]`);
+            if(mapEl) mapEl.classList.add('active');
+
+            // Update dropdown
+            stateSelect.value = stateCode;
+
+            // Populate Data
+            const data = stateData[stateCode];
+            document.getElementById('st-name').textContent = data.name;
+            document.getElementById('st-capital').textContent = `Capital: ${data.capital}`;
+            document.getElementById('st-portal').href = data.portal;
+            
+            document.getElementById('st-services').innerHTML = data.services.map(s => `<li><i data-lucide="check-circle"></i> ${s}</li>`).join('');
+            document.getElementById('st-schemes').innerHTML = data.schemes.map(s => `<div class="scheme-card"><h4>${s.name}</h4><p>${s.desc}</p></div>`).join('');
+            document.getElementById('st-depts').innerHTML = data.depts.map(d => `<span class="badge">${d}</span>`).join('');
+            
+            lucide.createIcons();
+
+            defaultPanel.style.display = 'none';
+            stateDetails.classList.remove('active');
+            void stateDetails.offsetWidth; // trigger reflow
+            stateDetails.classList.add('active');
+        }
+
+        mapElements.forEach(el => {
+            el.addEventListener('mouseenter', (e) => {
+                const code = el.getAttribute('data-state');
+                const name = stateData[code] ? stateData[code].name : code;
+                tooltip.textContent = name;
+                tooltip.style.opacity = 1;
+            });
+            el.addEventListener('mousemove', (e) => {
+                tooltip.style.left = e.pageX + 10 + 'px';
+                tooltip.style.top = e.pageY + 10 + 'px';
+            });
+            el.addEventListener('mouseleave', () => tooltip.style.opacity = 0);
+            el.addEventListener('click', () => selectState(el.getAttribute('data-state')));
+        });
+
+        stateSelect.addEventListener('change', (e) => {
+            if(e.target.value) selectState(e.target.value);
+            else {
+                defaultPanel.style.display = 'block';
+                stateDetails.classList.remove('active');
+                mapElements.forEach(el => el.classList.remove('active'));
+            }
+        });
+    </script>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

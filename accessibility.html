@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility | Bharat Connect</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Gov Bar -->
+    <div class="gov-bar">
+        <div class="gov-container">
+            <div class="gov-left">
+                <span class="flag-icon">🇮🇳</span>
+                <span>Government of India</span>
+                <span class="divider">|</span>
+                <span>Ministry of Electronics and Information Technology</span>
+            </div>
+            <div class="gov-right">
+                <a href="#main-content">Skip to Content</a>
+                <a href="#" id="langToggle">A<sup>+</sup> A A<sup>-</sup> | English</a>
+                <a href="accessibility.html" aria-label="Accessibility Options">
+                    <i data-lucide="accessibility"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="../assets/images/emblem.svg" alt="State Emblem of India" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\'><circle cx=\'20\' cy=\'20\' r=\'20\' fill=\'#0D2137\'/></svg>'">
+                <div>
+                    <h1>Bharat Connect</h1>
+                    <p>One Nation. One Digital Gateway.</p>
+                </div>
+            </a>
+
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <i data-lucide="menu"></i>
+            </button>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Schemes</a></li>
+                    <li><a href="#">Documents</a></li>
+                    <li><a href="accessibility.html" class="active">Accessibility</a></li>
+                </ul>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for services, schemes...">
+                    <button aria-label="Search">
+                        <i data-lucide="search"></i>
+                    </button>
+                    <button aria-label="Voice Search" class="voice-btn">
+                        <i data-lucide="mic"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Tricolor Accent -->
+    <div class="tricolor-bar"></div>
+
+    <main id="main-content" class="accessibility-container">
+        
+        <div class="accessibility-hero">
+            <h1><i data-lucide="accessibility" style="width: 32px; height: 32px; margin-right: 12px; vertical-align: middle;"></i>Accessibility Center</h1>
+            <p>Bharat Connect is committed to being accessible to every citizen of India, regardless of ability.</p>
+            <div class="compliance-badge">
+                <i data-lucide="check-circle" style="width: 16px; height: 16px; margin-right: 4px; vertical-align: middle;"></i>
+                WCAG 2.1 AA Compliant
+            </div>
+        </div>
+
+        <section class="settings-section">
+            <h2><i data-lucide="type"></i> Text Size</h2>
+            <div class="text-controls">
+                <button type="button" class="btn-outline" id="btnDecreaseText" aria-label="Decrease text size">A-</button>
+                <button type="button" class="btn-primary" id="btnDefaultText" aria-label="Default text size">A</button>
+                <button type="button" class="btn-outline" id="btnIncreaseText" aria-label="Increase text size">A+</button>
+            </div>
+            <div class="preview-box">
+                <p class="preview-text" id="textPreview">This is how your text will look. You can adjust the size above to ensure it is comfortable for you to read.</p>
+            </div>
+        </section>
+
+        <section class="settings-section">
+            <h2><i data-lucide="layout"></i> Display Mode</h2>
+            <div class="toggle-grid">
+                
+                <div class="toggle-card">
+                    <div class="toggle-content">
+                        <h3>High Contrast Mode</h3>
+                        <p>Dark background with high-contrast text for better visibility.</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="toggleHighContrast" aria-label="Toggle High Contrast">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="toggle-card">
+                    <div class="toggle-content">
+                        <h3>Easy Reading Mode</h3>
+                        <p>Simplified layout with extra spacing.</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="toggleEasyReading" aria-label="Toggle Easy Reading">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="toggle-card">
+                    <div class="toggle-content">
+                        <h3>Simple Language Mode</h3>
+                        <p>Content shown in simpler words (where available).</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="toggleSimpleLang" aria-label="Toggle Simple Language">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="settings-section">
+            <h2><i data-lucide="eye"></i> Vision Assistance</h2>
+            <div class="toggle-grid">
+                
+                <div class="toggle-card">
+                    <div class="toggle-content">
+                        <h3>Hide Images</h3>
+                        <p>Reduces visual clutter by hiding non-essential images.</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="toggleHideImages" aria-label="Toggle Hide Images">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="toggle-card">
+                    <div class="toggle-content">
+                        <h3>Big Cursor</h3>
+                        <p>Increases cursor size to make it easier to track.</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="toggleBigCursor" aria-label="Toggle Big Cursor">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="toggle-card">
+                    <div class="toggle-content">
+                        <h3>Text Spacing</h3>
+                        <p>Increases letter and word spacing for readability.</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="toggleTextSpacing" aria-label="Toggle Text Spacing">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="toggle-card">
+                    <div class="toggle-content">
+                        <h3>Line Height</h3>
+                        <p>Increases line spacing to reduce visual crowding.</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="toggleLineHeight" aria-label="Toggle Line Height">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="settings-section">
+            <h2><i data-lucide="ear"></i> Audio & Motor Assistance</h2>
+            
+            <div style="margin-bottom: 2rem;">
+                <h3 style="color: var(--navy-900); margin-bottom: 0.5rem;"><i data-lucide="volume-2" style="vertical-align: middle; width: 20px; height: 20px;"></i> Screen Reader Support</h3>
+                <p>This site is optimized for NVDA, JAWS, and VoiceOver screen readers. ARIA landmarks and labels have been implemented across all interactive elements.</p>
+            </div>
+
+            <div style="margin-bottom: 2rem;">
+                <h3 style="color: var(--navy-900); margin-bottom: 0.5rem;"><i data-lucide="mic" style="vertical-align: middle; width: 20px; height: 20px;"></i> Voice Navigation & Search</h3>
+                <p>Use the microphone icon in the search bar to search by voice. Say commands like "Go to Schemes" or "Open Help" when voice input is active.</p>
+            </div>
+
+            <div>
+                <h3 style="color: var(--navy-900); margin-bottom: 1rem;"><i data-lucide="keyboard" style="vertical-align: middle; width: 20px; height: 20px;"></i> Keyboard Navigation Guide</h3>
+                <p>You can navigate the entire site using your keyboard. Here are the global shortcuts:</p>
+                <div style="overflow-x: auto;">
+                    <table class="shortcuts-table">
+                        <thead>
+                            <tr>
+                                <th>Shortcut</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="kbd-key">Tab</span></td>
+                                <td>Move to next element</td>
+                            </tr>
+                            <tr>
+                                <td><span class="kbd-key">Shift</span> + <span class="kbd-key">Tab</span></td>
+                                <td>Move to previous element</td>
+                            </tr>
+                            <tr>
+                                <td><span class="kbd-key">Enter</span> / <span class="kbd-key">Space</span></td>
+                                <td>Activate button or link</td>
+                            </tr>
+                            <tr>
+                                <td><span class="kbd-key">Esc</span></td>
+                                <td>Close modal, dropdown, or panel</td>
+                            </tr>
+                            <tr>
+                                <td><span class="kbd-key">Alt</span> + <span class="kbd-key">1</span></td>
+                                <td>Skip to main content</td>
+                            </tr>
+                            <tr>
+                                <td><span class="kbd-key">Alt</span> + <span class="kbd-key">S</span></td>
+                                <td>Focus on search input</td>
+                            </tr>
+                            <tr>
+                                <td><span class="kbd-key">Alt</span> + <span class="kbd-key">A</span></td>
+                                <td>Open Accessibility Panel</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="settings-section">
+            <h2><i data-lucide="globe"></i> Language Support</h2>
+            <p style="margin-bottom: 1.5rem; color: var(--gray-600);">Bharat Connect is designed to be accessible in multiple regional languages of India.</p>
+            
+            <div class="lang-grid">
+                <div class="lang-card active">
+                    <div class="lang-native">English</div>
+                    <div class="lang-eng">English</div>
+                    <span class="lang-badge available">✓ Available</span>
+                </div>
+                <div class="lang-card">
+                    <div class="lang-native">हिंदी</div>
+                    <div class="lang-eng">Hindi</div>
+                    <span class="lang-badge available">✓ Available</span>
+                </div>
+                <div class="lang-card">
+                    <div class="lang-native">मराठी</div>
+                    <div class="lang-eng">Marathi</div>
+                    <span class="lang-badge">• Coming Soon</span>
+                </div>
+                <div class="lang-card">
+                    <div class="lang-native">தமிழ்</div>
+                    <div class="lang-eng">Tamil</div>
+                    <span class="lang-badge">• Coming Soon</span>
+                </div>
+                <div class="lang-card">
+                    <div class="lang-native">తెలుగు</div>
+                    <div class="lang-eng">Telugu</div>
+                    <span class="lang-badge">• Coming Soon</span>
+                </div>
+                <div class="lang-card">
+                    <div class="lang-native">বাংলা</div>
+                    <div class="lang-eng">Bengali</div>
+                    <span class="lang-badge">• Coming Soon</span>
+                </div>
+                <div class="lang-card">
+                    <div class="lang-native">ગુજરાતી</div>
+                    <div class="lang-eng">Gujarati</div>
+                    <span class="lang-badge">• Coming Soon</span>
+                </div>
+                <div class="lang-card">
+                    <div class="lang-native">ಕನ್ನಡ</div>
+                    <div class="lang-eng">Kannada</div>
+                    <span class="lang-badge">• Coming Soon</span>
+                </div>
+                <div class="lang-card">
+                    <div class="lang-native">മലയാളം</div>
+                    <div class="lang-eng">Malayalam</div>
+                    <span class="lang-badge">• Coming Soon</span>
+                </div>
+                <div class="lang-card">
+                    <div class="lang-native">ଓଡ଼ିଆ</div>
+                    <div class="lang-eng">Odia</div>
+                    <span class="lang-badge">• Coming Soon</span>
+                </div>
+                <div class="lang-card">
+                    <div class="lang-native">ਪੰਜਾਬੀ</div>
+                    <div class="lang-eng">Punjabi</div>
+                    <span class="lang-badge">• Coming Soon</span>
+                </div>
+                <div class="lang-card">
+                    <div class="lang-native">اردو</div>
+                    <div class="lang-eng">Urdu</div>
+                    <span class="lang-badge">• Coming Soon</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="settings-section">
+            <h2><i data-lucide="check-square"></i> WCAG 2.1 AA Compliance Overview</h2>
+            <ul class="wcag-list">
+                <li>
+                    <i data-lucide="check-circle" class="icon-check"></i>
+                    <div class="wcag-content">
+                        <h4>Perceivable</h4>
+                        <p>Information and user interface components are presentable to users in ways they can perceive (e.g., text alternatives, adaptable layout, sufficient contrast).</p>
+                    </div>
+                </li>
+                <li>
+                    <i data-lucide="check-circle" class="icon-check"></i>
+                    <div class="wcag-content">
+                        <h4>Operable</h4>
+                        <p>User interface components and navigation are operable (e.g., keyboard accessibility, sufficient time to read, naviagtion handles).</p>
+                    </div>
+                </li>
+                <li>
+                    <i data-lucide="check-circle" class="icon-check"></i>
+                    <div class="wcag-content">
+                        <h4>Understandable</h4>
+                        <p>Information and the operation of the user interface are understandable (e.g., readable text, predictable behavior, input assistance).</p>
+                    </div>
+                </li>
+                <li>
+                    <i data-lucide="check-circle" class="icon-check"></i>
+                    <div class="wcag-content">
+                        <h4>Robust</h4>
+                        <p>Content is robust enough that it can be interpreted reliably by a wide variety of user agents, including assistive technologies.</p>
+                    </div>
+                </li>
+            </ul>
+            <p style="margin-top: 1.5rem;">
+                <a href="#" style="color: var(--ashoka-blue); font-weight: 600; text-decoration: underline;">Read our full Accessibility Statement</a> | 
+                <a href="#" style="color: var(--ashoka-blue); font-weight: 600; text-decoration: underline;">Submit Accessibility Feedback</a>
+            </p>
+        </section>
+
+        <div class="reset-btn-container">
+            <button class="btn-reset" id="btnResetAll">
+                <i data-lucide="refresh-cw"></i> Reset All Accessibility Settings
+            </button>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>About Bharat Connect</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Vision & Mission</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Citizen Services</h3>
+                    <ul>
+                        <li><a href="#">Health & Wellness</a></li>
+                        <li><a href="#">Education & Learning</a></li>
+                        <li><a href="#">Jobs & Careers</a></li>
+                        <li><a href="#">Agriculture & Rural</a></li>
+                        <li><a href="#">Taxes & Finance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">DigiLocker</a></li>
+                        <li><a href="#">MyGov</a></li>
+                        <li><a href="#">India Code</a></li>
+                        <li><a href="#">UMANG App</a></li>
+                        <li><a href="#">RTI Online</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Connect With Us</h3>
+                    <p>Helpdesk: 1800-111-555</p>
+                    <p>Email: support@bharatconnect.gov.in</p>
+                    <div class="social-links" style="margin-top: 1rem; display: flex; gap: 1rem;">
+                        <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                        <a href="#" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom" style="background: #0a1929; color: #94a3b8; padding: 1.5rem 0; text-align: center; font-size: 0.875rem;">
+            <p>Designed and Developed by National Informatics Centre (NIC), Ministry of Electronics & IT, Government of India.</p>
+            <p>&copy; 2026 Government of India. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Initialize Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    
+    <!-- Accessibility Page Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const PREVIEW_TEXT = document.getElementById('textPreview');
+            const BTN_DEC = document.getElementById('btnDecreaseText');
+            const BTN_DEF = document.getElementById('btnDefaultText');
+            const BTN_INC = document.getElementById('btnIncreaseText');
+            
+            const TOGGLES = {
+                highContrast: document.getElementById('toggleHighContrast'),
+                easyReading: document.getElementById('toggleEasyReading'),
+                simpleLang: document.getElementById('toggleSimpleLang'),
+                hideImages: document.getElementById('toggleHideImages'),
+                bigCursor: document.getElementById('toggleBigCursor'),
+                textSpacing: document.getElementById('toggleTextSpacing'),
+                lineHeight: document.getElementById('toggleLineHeight')
+            };
+
+            const BTN_RESET = document.getElementById('btnResetAll');
+
+            // Default Font Sizes
+            const SIZES = {
+                small: '14px',
+                default: '16px',
+                large: '20px'
+            };
+            
+            // Text Size Handling
+            function updateTextSizeUI(sizeClass) {
+                BTN_DEC.className = 'btn-outline';
+                BTN_DEF.className = 'btn-outline';
+                BTN_INC.className = 'btn-outline';
+                
+                if (sizeClass === 'small') {
+                    BTN_DEC.className = 'btn-primary';
+                    PREVIEW_TEXT.style.fontSize = SIZES.small;
+                } else if (sizeClass === 'large') {
+                    BTN_INC.className = 'btn-primary';
+                    PREVIEW_TEXT.style.fontSize = SIZES.large;
+                } else {
+                    BTN_DEF.className = 'btn-primary';
+                    PREVIEW_TEXT.style.fontSize = SIZES.default;
+                }
+            }
+
+            BTN_DEC.addEventListener('click', () => {
+                document.documentElement.style.fontSize = SIZES.small;
+                localStorage.setItem('a11y_textSize', 'small');
+                updateTextSizeUI('small');
+            });
+
+            BTN_DEF.addEventListener('click', () => {
+                document.documentElement.style.fontSize = SIZES.default;
+                localStorage.setItem('a11y_textSize', 'default');
+                updateTextSizeUI('default');
+            });
+
+            BTN_INC.addEventListener('click', () => {
+                document.documentElement.style.fontSize = SIZES.large;
+                localStorage.setItem('a11y_textSize', 'large');
+                updateTextSizeUI('large');
+            });
+
+            // Toggle Handling
+            Object.keys(TOGGLES).forEach(key => {
+                const el = TOGGLES[key];
+                if(el) {
+                    el.addEventListener('change', (e) => {
+                        const isChecked = e.target.checked;
+                        localStorage.setItem('a11y_' + key, isChecked);
+                        
+                        const className = key.replace(/([A-Z])/g, "-$1").toLowerCase();
+                        if (isChecked) {
+                            document.body.classList.add(className);
+                        } else {
+                            document.body.classList.remove(className);
+                        }
+                    });
+                }
+            });
+
+            // Reset Handling
+            BTN_RESET.addEventListener('click', () => {
+                // Clear all a11y local storage keys
+                Object.keys(localStorage).forEach(key => {
+                    if (key.startsWith('a11y_')) {
+                        localStorage.removeItem(key);
+                    }
+                });
+                // Reset Classes
+                document.documentElement.style.fontSize = SIZES.default;
+                document.body.className = ''; // Remove all body classes (Assuming main app resets cleanly)
+                
+                // Reset UI
+                updateTextSizeUI('default');
+                Object.keys(TOGGLES).forEach(key => {
+                    if(TOGGLES[key]) TOGGLES[key].checked = false;
+                });
+                
+                alert("Accessibility settings have been reset to default.");
+            });
+
+            // Load Settings on Page Load
+            function loadSettings() {
+                // Text Size
+                const savedSize = localStorage.getItem('a11y_textSize') || 'default';
+                updateTextSizeUI(savedSize);
+                if(savedSize === 'small') document.documentElement.style.fontSize = SIZES.small;
+                if(savedSize === 'large') document.documentElement.style.fontSize = SIZES.large;
+                if(savedSize === 'default') document.documentElement.style.fontSize = SIZES.default;
+
+                // Toggles
+                Object.keys(TOGGLES).forEach(key => {
+                    const el = TOGGLES[key];
+                    const savedVal = localStorage.getItem('a11y_' + key) === 'true';
+                    if (el) {
+                        el.checked = savedVal;
+                        const className = key.replace(/([A-Z])/g, "-$1").toLowerCase();
+                        if(savedVal) document.body.classList.add(className);
+                    }
+                });
+            }
+
+            loadSettings();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Search | Bharat Connect</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    
+    
+</head>
+<body>
+
+    <!-- Gov Bar -->
+    <div class="gov-bar">
+        <div class="gov-bar-container">
+            <div class="gov-left">
+                <span>Government of India</span>
+                <span>|</span>
+                <span>Ministry of Electronics & IT</span>
+            </div>
+            <div class="gov-right">
+                <a href="#main-content">Skip to Main Content</a>
+                <button class="icon-btn" aria-label="Accessibility Options">
+                    <i data-lucide="accessibility"></i>
+                </button>
+                <div class="lang-toggle">
+                    <button class="active">English</button>
+                    <button>हिन्दी</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" alt="State Emblem of India" height="40">
+                <div class="logo-text">
+                    <h1>Bharat Connect</h1>
+                    <p>National Portal of India</p>
+                </div>
+            </a>
+            
+            <button class="mobile-menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="#">Citizens</a>
+                <a href="#">Business</a>
+                <a href="#">Government</a>
+                <a href="#">Directory</a>
+                <a href="#" class="search-icon-nav active"><i data-lucide="search"></i></a>
+            </div>
+        </div>
+    </nav>
+    <div class="tricolor-bar"></div>
+
+    <!-- Search Header -->
+    <header class="search-header">
+        <div class="search-header-container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> &gt; <span>Search Results</span>
+            </div>
+            
+            <form class="search-bar-wrapper" id="mainSearchForm">
+                <button type="button" class="mic-btn" id="voiceSearchBtn" title="Search by Voice">
+                    <i data-lucide="mic"></i>
+                </button>
+                <input type="text" id="searchInput" placeholder="Search for schemes, services, documents..." autocomplete="off">
+                <button type="submit" class="search-btn">
+                    <i data-lucide="search"></i> Search
+                </button>
+            </form>
+            
+            <div class="search-results-meta" id="searchMetaText">
+                Showing results for: <strong>...</strong>
+            </div>
+        </div>
+    </header>
+
+    <!-- Did You Mean Banner -->
+    <div class="main-container" style="padding-bottom: 0;">
+        <div class="did-you-mean" id="didYouMeanBanner">
+            <i data-lucide="info" style="color: #F57F17;"></i>
+            <span>Showing results for '<span id="originalQuery"></span>'. Did you mean: <a href="#" id="suggestedQuery"></a>?</span>
+        </div>
+    </div>
+
+    <!-- Intent Analysis Card -->
+    <div class="intent-card-wrapper" id="intentCardWrapper">
+        <div class="intent-card" id="intentCardLoading" style="display: block;">
+            <div class="intent-header">
+                <i data-lucide="sparkles" style="color: var(--saffron);"></i>
+                <h3>Bharat Intent Engine</h3>
+            </div>
+            <div class="intent-analyzing" id="analyzingText">
+                Analyzing your request...
+            </div>
+            <div class="loading-skeleton" style="width: 80%;"></div>
+            <div class="loading-skeleton" style="width: 60%;"></div>
+            <div class="loading-skeleton" style="width: 70%;"></div>
+        </div>
+        
+        <div class="intent-card" id="intentCardResult">
+            <div class="intent-header">
+                <i data-lucide="sparkles" style="color: var(--saffron);"></i>
+                <h3>Bharat Intent Engine — Understanding Your Need</h3>
+            </div>
+            <div class="intent-analyzing">
+                Analyzing: "<span id="intentQueryText"></span>"
+            </div>
+            <div class="intent-profile" id="intentProfileGrid">
+                <!-- Populated via JS -->
+            </div>
+            <div class="intent-recommendation">
+                Recommended for you <i data-lucide="arrow-down" size="18"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="main-container" id="main-content">
+        
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="filter-section">
+                <h4>Result Type</h4>
+                <label class="filter-option"><input type="radio" name="resType" checked> All Results</label>
+                <label class="filter-option"><input type="radio" name="resType"> Schemes</label>
+                <label class="filter-option"><input type="radio" name="resType"> Services</label>
+                <label class="filter-option"><input type="radio" name="resType"> Documents</label>
+                <label class="filter-option"><input type="radio" name="resType"> Ministries</label>
+            </div>
+            
+            <div class="filter-section">
+                <h4>Government Level</h4>
+                <label class="filter-option"><input type="checkbox" checked> Central Government</label>
+                <label class="filter-option"><input type="checkbox" checked> State Government</label>
+            </div>
+            
+            <div class="filter-section">
+                <h4>State / UT</h4>
+                <select class="filter-select">
+                    <option value="">All India</option>
+                    <option value="dl">Delhi</option>
+                    <option value="mh">Maharashtra</option>
+                    <option value="up">Uttar Pradesh</option>
+                    <option value="ka">Karnataka</option>
+                </select>
+            </div>
+            
+            <div class="filter-section">
+                <h4>Citizen Category</h4>
+                <label class="filter-option"><input type="checkbox"> Students</label>
+                <label class="filter-option"><input type="checkbox"> Farmers</label>
+                <label class="filter-option"><input type="checkbox"> Senior Citizens</label>
+                <label class="filter-option"><input type="checkbox"> Women</label>
+                <label class="filter-option"><input type="checkbox"> Entrepreneurs</label>
+            </div>
+            
+            <button class="btn-clear-filters">Clear All Filters</button>
+        </aside>
+
+        <!-- Results Area -->
+        <div class="results-area">
+            
+            <div class="empty-state" id="emptyState">
+                <i data-lucide="search-x"></i>
+                <h3>No exact matches found</h3>
+                <p>We couldn't find exactly what you were looking for. Try adjusting your keywords or filters.</p>
+                <button class="btn btn-outline" onclick="document.getElementById('searchInput').focus()">Try New Search</button>
+            </div>
+
+            <div id="resultsContent">
+                
+                <!-- Section: Guide Me -->
+                <div class="guide-card" id="guideCard" style="display: none;">
+                    <div class="guide-content">
+                        <h4><i data-lucide="compass" style="display:inline; vertical-align:text-bottom;"></i> Guided Journey Available</h4>
+                        <p>We have a step-by-step guide to help you with this specific life event.</p>
+                        <div class="guide-steps">
+                            <span class="step-pill">1. Check Eligibility</span>
+                            <span class="step-pill">2. Gather Docs</span>
+                            <span class="step-pill">3. Apply</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-primary" style="background: var(--saffron); color: var(--navy-900);">Start Guide</a>
+                </div>
+
+                <!-- Section: Schemes -->
+                <div id="schemesSection">
+                    <h2 class="section-title">Recommended Schemes</h2>
+                    <div id="schemesContainer">
+                        <!-- Populated via JS -->
+                    </div>
+                </div>
+
+                <!-- Section: Services -->
+                <div id="servicesSection">
+                    <h2 class="section-title">Relevant Government Services</h2>
+                    <div id="servicesContainer">
+                        <!-- Populated via JS -->
+                    </div>
+                </div>
+
+                <!-- Section: Documents -->
+                <div id="docsSection">
+                    <h2 class="section-title">Helpful Documents to Prepare</h2>
+                    <div class="doc-checklist">
+                        <label class="check-item"><input type="checkbox"> Aadhaar Card</label>
+                        <label class="check-item"><input type="checkbox"> Income Certificate</label>
+                        <label class="check-item"><input type="checkbox"> Passport Size Photo</label>
+                        <label class="check-item"><input type="checkbox"> Bank Account Details</label>
+                    </div>
+                </div>
+
+                <!-- Section: Related -->
+                <div id="relatedSection" style="margin-top: 40px;">
+                    <h2 class="section-title">Related Searches</h2>
+                    <div class="related-chips">
+                        <a href="?q=scholarships" class="chip"><i data-lucide="search" size="14"></i> National Scholarship Portal</a>
+                        <a href="?q=education+loan" class="chip"><i data-lucide="search" size="14"></i> Education Loan Subsidy</a>
+                        <a href="?q=hostel+facilities" class="chip"><i data-lucide="search" size="14"></i> Student Hostel Facilities</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <!-- Assuming standard footer structure from previous pages, simplified here -->
+        <div class="footer-container" style="max-width: 1200px; margin: 0 auto; padding: 40px 20px; color: var(--white); background: var(--navy-900);">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px;">
+                <div>
+                    <h4 style="color: var(--saffron); margin-bottom: 16px;">About</h4>
+                    <ul style="list-style: none; padding: 0; line-height: 2;">
+                        <li><a href="#" style="color: var(--gray-200); text-decoration: none;">About Bharat Connect</a></li>
+                        <li><a href="#" style="color: var(--gray-200); text-decoration: none;">Terms of Use</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--saffron); margin-bottom: 16px;">Services</h4>
+                    <ul style="list-style: none; padding: 0; line-height: 2;">
+                        <li><a href="#" style="color: var(--gray-200); text-decoration: none;">A-Z Services</a></li>
+                        <li><a href="#" style="color: var(--gray-200); text-decoration: none;">State Portals</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--saffron); margin-bottom: 16px;">Connect</h4>
+                    <ul style="list-style: none; padding: 0; line-height: 2;">
+                        <li><a href="#" style="color: var(--gray-200); text-decoration: none;">Help & Support</a></li>
+                        <li><a href="#" style="color: var(--gray-200); text-decoration: none;">Feedback</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--saffron); margin-bottom: 16px;">Quick Links</h4>
+                    <ul style="list-style: none; padding: 0; line-height: 2;">
+                        <li><a href="#" style="color: var(--gray-200); text-decoration: none;">MyGov</a></li>
+                        <li><a href="#" style="color: var(--gray-200); text-decoration: none;">Digital India</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; color: var(--gray-400);">
+                &copy; 2026 Government of India. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Get URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            let query = urlParams.get('q') || 'I am an engineering student and need financial help';
+            
+            // 2. Setup UI with query
+            const searchInput = document.getElementById('searchInput');
+            const searchMetaText = document.getElementById('searchMetaText');
+            
+            searchInput.value = query;
+            searchMetaText.innerHTML = `Showing results for: <strong>"${query}"</strong>`;
+
+            // 3. Handle Voice Search simulation
+            const voiceBtn = document.getElementById('voiceSearchBtn');
+            voiceBtn.addEventListener('click', () => {
+                const icon = voiceBtn.querySelector('i');
+                const originalColor = voiceBtn.style.color;
+                
+                voiceBtn.style.color = 'var(--saffron)';
+                searchInput.value = 'Listening...';
+                
+                setTimeout(() => {
+                    voiceBtn.style.color = originalColor;
+                    searchInput.value = 'How to apply for driving license?';
+                    document.getElementById('mainSearchForm').dispatchEvent(new Event('submit'));
+                }, 2000);
+            });
+
+            // 4. Handle Form Submit
+            document.getElementById('mainSearchForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const newQuery = searchInput.value;
+                window.location.href = `search.html?q=${encodeURIComponent(newQuery)}`;
+            });
+
+            // 5. "Did You Mean" logic (Simulated for specific query)
+            if (query.toLowerCase() === 'pm-kisan' || query.toLowerCase() === 'pmkisan') {
+                document.getElementById('didYouMeanBanner').style.display = 'flex';
+                document.getElementById('originalQuery').textContent = query;
+                const sug = document.getElementById('suggestedQuery');
+                sug.textContent = 'PM Kisan';
+                sug.href = `search.html?q=PM+Kisan`;
+            }
+
+            // 6. Intent Engine Simulation
+            simulateIntentEngine(query);
+            
+            // 7. Render Mock Results
+            renderResults(query);
+        });
+
+        function simulateIntentEngine(query) {
+            const loadingCard = document.getElementById('intentCardLoading');
+            const resultCard = document.getElementById('intentCardResult');
+            const analyzingText = document.getElementById('analyzingText');
+            const intentQueryText = document.getElementById('intentQueryText');
+            const intentProfileGrid = document.getElementById('intentProfileGrid');
+
+            analyzingText.textContent = `Analyzing: "${query}"...`;
+            intentQueryText.textContent = query;
+
+            // Mock intent logic based on keywords
+            let intentData = {
+                type: "Citizen",
+                level: "General",
+                need: "Information",
+                category: "General Services"
+            };
+
+            const qLower = query.toLowerCase();
+            
+            if (qLower.includes('student') || qLower.includes('scholarship') || qLower.includes('education')) {
+                intentData = {
+                    type: "Student",
+                    level: "Higher Education",
+                    need: "Financial Assistance",
+                    category: "Scholarships & Education Support"
+                };
+            } else if (qLower.includes('farm') || qLower.includes('kisan') || qLower.includes('crop')) {
+                intentData = {
+                    type: "Farmer",
+                    level: "Agriculture",
+                    need: "Financial Support / Subsidies",
+                    category: "Agriculture & Rural Welfare"
+                };
+            } else if (qLower.includes('business') || qLower.includes('startup') || qLower.includes('msme')) {
+                intentData = {
+                    type: "Entrepreneur / MSME",
+                    level: "Business Owner",
+                    need: "Registration & Funding",
+                    category: "Business & Commerce"
+                };
+            }
+
+            // Populate Grid
+            intentProfileGrid.innerHTML = `
+                <div class="profile-item">
+                    <i data-lucide="user"></i>
+                    <div>
+                        <small style="color:var(--gray-600); display:block; font-size:0.8rem;">Citizen Type</small>
+                        <strong>${intentData.type}</strong>
+                    </div>
+                </div>
+                <div class="profile-item">
+                    <i data-lucide="graduation-cap"></i>
+                    <div>
+                        <small style="color:var(--gray-600); display:block; font-size:0.8rem;">Profile Detail</small>
+                        <strong>${intentData.level}</strong>
+                    </div>
+                </div>
+                <div class="profile-item">
+                    <i data-lucide="lightbulb"></i>
+                    <div>
+                        <small style="color:var(--gray-600); display:block; font-size:0.8rem;">Primary Need</small>
+                        <strong>${intentData.need}</strong>
+                    </div>
+                </div>
+                <div class="profile-item">
+                    <i data-lucide="folder"></i>
+                    <div>
+                        <small style="color:var(--gray-600); display:block; font-size:0.8rem;">Category</small>
+                        <strong>${intentData.category}</strong>
+                    </div>
+                </div>
+            `;
+            lucide.createIcons({ root: intentProfileGrid });
+
+            // Animation timing
+            setTimeout(() => {
+                loadingCard.style.display = 'none';
+                resultCard.style.display = 'block';
+            }, 1200);
+        }
+
+        function renderResults(query) {
+            // Mock data for results
+            const schemes = [
+                {
+                    id: 'sch1',
+                    title: 'Post Matric Scholarships Scheme for Minorities',
+                    ministry: 'Ministry of Minority Affairs',
+                    category: 'Scholarships',
+                    desc: 'Provides financial assistance to poor and meritorious students belonging to minority communities to pursue higher education.',
+                    benefits: ['Admission & Tuition fee coverage', 'Maintenance allowance up to ₹1,200/month'],
+                    eligibility: 'Minimum 50% marks in previous exam. Annual family income below ₹2 Lakh.',
+                    deadline: 'Closing in 15 days (30 Oct)',
+                    docs: ['Aadhaar Card', 'Income Certificate', 'Previous Year Marksheet', 'Fee Receipt']
+                },
+                {
+                    id: 'sch2',
+                    title: 'Central Sector Scheme of Scholarship for College and University Students',
+                    ministry: 'Department of Higher Education',
+                    category: 'Education Support',
+                    desc: 'Aims to provide financial assistance to meritorious students from low income families to meet a part of their day-to-day expenses while pursuing higher studies.',
+                    benefits: ['₹12,000/- per annum at Graduation level', '₹20,000/- per annum at Post-Graduation level'],
+                    eligibility: 'Above 80th percentile of successful candidates in class XII. Family income < ₹4.5 Lakh.',
+                    deadline: 'Accepting Applications',
+                    docs: ['Aadhaar Card', 'Income Certificate', 'Class 12 Marksheet', 'Bank Passbook']
+                }
+            ];
+
+            const services = [
+                {
+                    title: 'Apply for Education Loan Subsidy (CSIS)',
+                    desc: 'Portal for claiming interest subsidy on education loans during the moratorium period.',
+                    link: '#'
+                },
+                {
+                    title: 'Update Aadhaar Details (Required for DBT)',
+                    desc: 'Ensure your Aadhaar is linked to your bank account to receive direct benefit transfers.',
+                    link: '#'
+                }
+            ];
+
+            // Render Schemes
+            const schemesContainer = document.getElementById('schemesContainer');
+            schemesContainer.innerHTML = schemes.map(sch => `
+                <div class="result-card">
+                    <div class="card-badges">
+                        <span class="badge badge-ministry">${sch.ministry}</span>
+                        <span class="badge badge-category">${sch.category}</span>
+                        <span class="badge badge-deadline"><i data-lucide="clock" size="12"></i> ${sch.deadline}</span>
+                    </div>
+                    <div class="card-header">
+                        <h3 class="card-title">${sch.title}</h3>
+                        <button class="btn-bookmark" onclick="toggleBookmark(this)" title="Save Scheme">
+                            <i data-lucide="bookmark"></i>
+                        </button>
+                    </div>
+                    <p class="card-desc">${sch.desc}</p>
+                    <ul class="card-benefits">
+                        ${sch.benefits.map(b => `<li>${b}</li>`).join('')}
+                    </ul>
+                    <div class="card-eligibility">
+                        <strong>Eligibility:</strong> ${sch.eligibility}
+                    </div>
+                    
+                    <details class="docs-dropdown">
+                        <summary class="docs-summary">
+                            <i data-lucide="file-text" size="16"></i> Required Documents (Expand)
+                        </summary>
+                        <div class="docs-content">
+                            ${sch.docs.join(', ')}
+                        </div>
+                    </details>
+
+                    <div class="card-actions">
+                        <button class="btn btn-outline">View Details</button>
+                        <a href="#" class="btn btn-primary">Apply on Official Portal <i data-lucide="external-link" size="16"></i></a>
+                    </div>
+                </div>
+            `).join('');
+
+            // Render Services
+            const servicesContainer = document.getElementById('servicesContainer');
+            servicesContainer.innerHTML = services.map(srv => `
+                <div class="result-card" style="padding: 16px 24px;">
+                    <h3 class="card-title" style="font-size: 1.1rem; margin-bottom: 8px;">
+                        <a href="${srv.link}" style="color: var(--ashoka-blue); text-decoration: none;">${srv.title}</a>
+                    </h3>
+                    <p class="card-desc" style="margin-bottom: 0;">${srv.desc}</p>
+                </div>
+            `).join('');
+
+            // Show Guide card if specific query
+            if(query.toLowerCase().includes('student')) {
+                document.getElementById('guideCard').style.display = 'flex';
+            }
+
+            // Re-init icons for dynamic content
+            lucide.createIcons();
+        }
+
+        function toggleBookmark(btn) {
+            btn.classList.toggle('active');
+            const icon = btn.querySelector('i');
+            if(btn.classList.contains('active')) {
+                icon.setAttribute('fill', 'currentColor');
+                // Could save to localStorage here
+            } else {
+                icon.setAttribute('fill', 'none');
+            }
+        }
+    </script>
+</body>
+</html>

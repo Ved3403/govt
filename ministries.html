@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ministries & Departments | Bharat Connect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/main.css">
+    
+</head>
+<body>
+    <div class="gov-bar">
+        <div class="container">
+            <span>Government of India | NIC | MeitY | Digital India</span>
+            <div class="gov-actions">
+                <a href="#main-content">Skip to Content</a>
+                <button aria-label="Accessibility Options"><i data-lucide="eye"></i></button>
+                <select aria-label="Language Select"><option>English</option><option>हिन्दी</option></select>
+            </div>
+        </div>
+    </div>
+    
+    <nav class="main-nav">
+        <div class="container" style="display: flex; align-items: center; justify-content: space-between; padding: 16px 0;">
+            <a href="index.html" class="logo" style="color: white; font-weight: bold; text-decoration: none; font-size: 20px;">Bharat Connect</a>
+            <div class="nav-links" style="display: flex; gap: 24px;">
+                <a href="index.html" style="color: white; text-decoration: none;">Home</a>
+                <a href="dashboard.html" style="color: white; text-decoration: none;">My Dashboard</a>
+                <a href="ministries.html" style="color: white; text-decoration: none; font-weight: bold;">Ministries</a>
+                <a href="news.html" style="color: white; text-decoration: none;">News</a>
+                <a href="help.html" style="color: white; text-decoration: none;">Help</a>
+            </div>
+        </div>
+    </nav>
+    <div class="tricolor-bar">
+        <div class="saffron"></div>
+        <div class="white"></div>
+        <div class="green"></div>
+    </div>
+
+    <div class="hero">
+        <div class="container">
+            <h1>Ministries & Departments</h1>
+            <p>Access information, services, and official communications from all Union Ministries and Departments in one place.</p>
+            <div class="search-box">
+                <i data-lucide="search"></i>
+                <input type="text" id="min-search" placeholder="Search ministries, departments, or services...">
+            </div>
+        </div>
+    </div>
+
+    <main id="main-content" class="container">
+        <div class="filters">
+            <button class="filter-btn active">All</button>
+            <button class="filter-btn">Education</button>
+            <button class="filter-btn">Health</button>
+            <button class="filter-btn">Agriculture</button>
+            <button class="filter-btn">Finance</button>
+            <button class="filter-btn">Technology</button>
+            <button class="filter-btn">Transport</button>
+            <button class="filter-btn">Social</button>
+            <button class="filter-btn">Other</button>
+        </div>
+
+        <h2 style="color: var(--navy-900); margin: 16px 0;">Featured Ministries</h2>
+        <div class="featured-grid">
+            <div class="m-card">
+                <div class="m-card-icon">🎓</div>
+                <div class="m-card-title">Ministry of Education</div>
+                <div class="m-card-desc">Oversees education policy and programs across India.</div>
+                <div class="m-badge">42 Services</div>
+                <ul class="m-links">
+                    <li><a href="#">National Scholarship Portal</a></li>
+                    <li><a href="#">SWAYAM Portal</a></li>
+                </ul>
+                <a href="#" class="btn-visit">Visit Ministry ↗</a>
+            </div>
+            <div class="m-card">
+                <div class="m-card-icon">⚕️</div>
+                <div class="m-card-title">Ministry of Health</div>
+                <div class="m-card-desc">Responsible for health policy and administration.</div>
+                <div class="m-badge">38 Services</div>
+                <ul class="m-links">
+                    <li><a href="#">Ayushman Bharat</a></li>
+                    <li><a href="#">CoWIN Portal</a></li>
+                </ul>
+                <a href="#" class="btn-visit">Visit Ministry ↗</a>
+            </div>
+            <div class="m-card">
+                <div class="m-card-icon">🌾</div>
+                <div class="m-card-title">Ministry of Agriculture</div>
+                <div class="m-card-desc">Formulates policies related to agriculture and farmer welfare.</div>
+                <div class="m-badge">25 Services</div>
+                <ul class="m-links">
+                    <li><a href="#">PM-KISAN</a></li>
+                    <li><a href="#">Kisan Suvidha</a></li>
+                </ul>
+                <a href="#" class="btn-visit">Visit Ministry ↗</a>
+            </div>
+        </div>
+
+        <h2 style="color: var(--navy-900); margin: 16px 0;">All Departments</h2>
+        <div class="ministry-grid" id="min-grid">
+            <!-- Rendered by JS -->
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div style="text-align: center; padding: 24px 0; border-top: 1px solid var(--gray-600); font-size: 14px; color: var(--gray-200);">
+                © 2024 Government of India. Designed for Bharat Connect.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+        const ministries = [
+            { icon: "💰", name: "Ministry of Finance", desc: "Economic policy, taxation, and financial services.", count: "50+", links: ["Income Tax e-Filing", "GST Portal"] },
+            { icon: "💻", name: "MeitY", desc: "IT policy, electronics, and Digital India.", count: "30+", links: ["DigiLocker", "UMANG"] },
+            { icon: "🚆", name: "Ministry of Railways", desc: "Operation and maintenance of Indian Railways.", count: "15+", links: ["IRCTC Ticket Booking", "Train Status"] },
+            { icon: "🛡️", name: "Ministry of Defence", desc: "National security and armed forces.", count: "20+", links: ["Agnipath Scheme", "Gallantry Awards"] },
+            { icon: "⚖️", name: "Ministry of Law", desc: "Legal affairs and justice administration.", count: "12+", links: ["eCourts Services", "Legal Aid"] },
+            { icon: "🤝", name: "Ministry of Social Justice", desc: "Welfare of marginalized communities.", count: "28+", links: ["PM YASASVI", "Senior Citizen ID"] },
+            { icon: "🛣️", name: "Road Transport", desc: "National highways and transport rules.", count: "18+", links: ["Parivahan Sewa", "FasTag"] },
+            { icon: "🏢", name: "Ministry of Labour", desc: "Worker welfare and employment generation.", count: "22+", links: ["eShram Portal", "EPFO Services"] }
+        ];
+
+        const grid = document.getElementById('min-grid');
+        function renderMinistries(data) {
+            grid.innerHTML = data.map(m => `
+                <div class="m-card">
+                    <div class="m-card-icon">${m.icon}</div>
+                    <div class="m-card-title">${m.name}</div>
+                    <div class="m-card-desc">${m.desc}</div>
+                    <div class="m-badge">${m.count} Services</div>
+                    <ul class="m-links">
+                        ${m.links.map(l => `<li><a href="#">${l}</a></li>`).join('')}
+                    </ul>
+                    <a href="#" class="btn-visit">Visit Ministry ↗</a>
+                </div>
+            `).join('');
+        }
+        renderMinistries(ministries);
+        
+        document.getElementById('min-search').addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            const filtered = ministries.filter(m => m.name.toLowerCase().includes(term) || m.desc.toLowerCase().includes(term));
+            renderMinistries(filtered);
+        });
+    </script>
+
+    <script src="js/data.js"></script>
+</body>
+</html>

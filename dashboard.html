@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bharat Dashboard | Bharat Connect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/main.css">
+    
+</head>
+<body>
+    <div class="gov-bar">
+        <div class="container">
+            <span>Government of India | NIC | MeitY | Digital India</span>
+            <div class="gov-actions">
+                <a href="#main-content">Skip to Content</a>
+                <button aria-label="Accessibility Options"><i data-lucide="eye"></i></button>
+                <select aria-label="Language Select"><option>English</option><option>हिन्दी</option></select>
+            </div>
+        </div>
+    </div>
+    
+    <nav class="main-nav">
+        <div class="container">
+            <a href="index.html" class="logo">Bharat Connect</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="dashboard.html" class="active">My Dashboard</a>
+                <a href="ministries.html">Ministries</a>
+                <a href="news.html">News</a>
+                <a href="help.html">Help</a>
+            </div>
+            <div class="nav-actions">
+                <button><i data-lucide="search"></i></button>
+            </div>
+        </div>
+    </nav>
+    <div class="tricolor-bar">
+        <div class="saffron"></div>
+        <div class="white"></div>
+        <div class="green"></div>
+    </div>
+
+    <main id="main-content" class="dashboard-container">
+        <div class="alert-banner">
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <i data-lucide="alert-circle"></i>
+                <strong>1 scheme deadline in 3 days:</strong> PM Scholarship — Apply before Oct 15
+            </div>
+            <a href="#" style="color: #991B1B; font-weight: 600;">View &rarr;</a>
+        </div>
+
+        <div class="hero">
+            <div>
+                <h1 id="greeting" style="color: var(--navy-900); font-size: 24px; margin-bottom: 16px;">👋 Good Morning! Here's what matters to you today.</h1>
+                <div class="hero-info">
+                    <div class="avatar">JD</div>
+                    <div>
+                        <div style="font-size: 18px; font-weight: 600;">John Doe</div>
+                        <div class="badges">
+                            <span class="badge">Student</span>
+                            <span class="badge state">Karnataka</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-row">
+            <div class="stat-card">
+                <div class="stat-value">3</div>
+                <div class="stat-label">Recommended Services</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="saved-count">2</div>
+                <div class="stat-label">Saved Schemes</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">1</div>
+                <div class="stat-label">Upcoming Deadline</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">4</div>
+                <div class="stat-label">Saved Links</div>
+            </div>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="card span-2">
+                <div class="card-header">
+                    <div class="card-title">Recommended For You</div>
+                    <span style="font-size: 13px; color: var(--gray-600);">Personalized based on your preferences</span>
+                </div>
+                <div>
+                    <div class="list-item">
+                        <div>
+                            <strong>Post Matric Scholarship Scheme</strong>
+                            <div style="font-size: 13px; color: var(--gray-600);">Ministry of Social Justice</div>
+                        </div>
+                        <a href="#" class="btn-small">View Details</a>
+                    </div>
+                    <div class="list-item">
+                        <div>
+                            <strong>Digital India Internship Scheme</strong>
+                            <div style="font-size: 13px; color: var(--gray-600);">MeitY</div>
+                        </div>
+                        <a href="#" class="btn-small">View Details</a>
+                    </div>
+                    <div class="list-item">
+                        <div>
+                            <strong>PM YUVA Yojana</strong>
+                            <div style="font-size: 13px; color: var(--gray-600);">Ministry of Education</div>
+                        </div>
+                        <a href="#" class="btn-small">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Upcoming Deadlines</div>
+                </div>
+                <div>
+                    <div class="list-item">
+                        <div>
+                            <strong>PM Scholarship</strong>
+                            <div style="font-size: 13px; color: #DC2626; font-weight: 500;">Oct 15</div>
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <div>
+                            <strong>Ration Card Renewal</strong>
+                            <div style="font-size: 13px; color: var(--gray-600);">Dec 1</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Saved Schemes</div>
+                </div>
+                <div id="saved-schemes-list">
+                    <div class="list-item">
+                        <div>PM Kisan Samman Nidhi</div>
+                        <button class="btn-outline-small">Remove</button>
+                    </div>
+                    <div class="list-item">
+                        <div>Ayushman Bharat</div>
+                        <button class="btn-outline-small">Remove</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Recently Viewed</div>
+                </div>
+                <div>
+                    <div class="list-item"><div>Aadhaar Update</div></div>
+                    <div class="list-item"><div>Passport Seva</div></div>
+                    <div class="list-item"><div>DigiLocker</div></div>
+                    <div class="list-item"><div>Voter ID Apply</div></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Quick Apply Shortcuts</div>
+                </div>
+                <div class="quick-actions">
+                    <a href="#" class="quick-btn"><i data-lucide="graduation-cap"></i> Apply Scholarship</a>
+                    <a href="#" class="quick-btn"><i data-lucide="credit-card"></i> Check PAN</a>
+                    <a href="#" class="quick-btn"><i data-lucide="home"></i> PMAY Status</a>
+                    <a href="#" class="quick-btn"><i data-lucide="tractor"></i> PM-KISAN</a>
+                </div>
+            </div>
+            
+            <div class="card span-2">
+                <div class="card-header">
+                    <div class="card-title">Government Alerts</div>
+                </div>
+                <div>
+                    <div class="list-item">
+                        <div>
+                            <strong>Link Aadhaar with Voter ID</strong>
+                            <div style="font-size: 13px; color: var(--gray-600);">Election Commission of India | Sep 20, 2023</div>
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <div>
+                            <strong>New IT Portal Guidelines</strong>
+                            <div style="font-size: 13px; color: var(--gray-600);">Ministry of Finance | Sep 15, 2023</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="privacy-notice">
+            <i data-lucide="lock" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle;"></i> 
+            🔒 Privacy First — Your data stays on your device. We never store personal information on our servers.
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; padding: 48px 0; border-top: 1px solid var(--gray-600);">
+                <div>
+                    <h4>About Portal</h4>
+                    <p style="font-size: 14px; color: var(--gray-200);">National Portal of India provides a single-window access to information and services being provided by the various Indian Government entities.</p>
+                </div>
+                <div>
+                    <h4>Services</h4>
+                    <ul style="list-style: none; padding: 0; line-height: 2;">
+                        <li><a href="#" style="color: white; text-decoration: none;">Agriculture</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none;">Health & Family Welfare</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none;">Education</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Connect</h4>
+                    <ul style="list-style: none; padding: 0; line-height: 2;">
+                        <li><a href="#" style="color: white; text-decoration: none;">Contact Us</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none;">Feedback</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none;">Help</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul style="list-style: none; padding: 0; line-height: 2;">
+                        <li><a href="#" style="color: white; text-decoration: none;">MyGov</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none;">Digital India</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none;">India.gov.in</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align: center; padding: 24px 0; border-top: 1px solid var(--gray-600); font-size: 14px; color: var(--gray-200);">
+                © 2024 Government of India. Designed for Bharat Connect.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+        document.addEventListener('DOMContentLoaded', () => {
+            const hour = new Date().getHours();
+            let greeting = 'Good Evening';
+            if (hour < 12) greeting = 'Good Morning';
+            else if (hour < 17) greeting = 'Good Afternoon';
+            document.getElementById('greeting').innerHTML = `👋 ${greeting}! Here's what matters to you today.`;
+        });
+    </script>
+    <script src="js/data.js"></script>
+</body>
+</html>

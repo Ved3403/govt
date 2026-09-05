@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bharat Scheme Finder | Bharat Connect</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    
+    
+</head>
+<body>
+    <!-- Top Gov Bar -->
+    <div class="gov-bar" style="background: var(--navy-700); color: white; padding: 4px 24px; font-size: 13px; display: flex; justify-content: space-between; align-items: center;">
+        <div class="gov-left">
+            <span>Government of India | Ministry of Electronics & IT</span>
+        </div>
+        <div class="gov-right" style="display: flex; gap: 16px;">
+            <a href="#main-content" style="color: white; text-decoration: none;">Skip to Main Content</a>
+            <button class="lang-toggle" style="background: transparent; border: 1px solid rgba(255,255,255,0.3); color: white; border-radius: 4px; padding: 2px 8px; cursor: pointer; font-size: 12px;">English</button>
+            <button class="a11y-toggle" style="background: transparent; border: none; color: white; cursor: pointer;"><i data-lucide="eye"></i></button>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="main-nav" style="background: var(--navy-900); padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100;">
+        <div class="logo">
+            <a href="index.html" style="color: white; text-decoration: none; display: flex; align-items: center; gap: 12px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" alt="State Emblem of India" height="40" style="filter: brightness(0) invert(1);">
+                <div>
+                    <div style="font-size: 20px; font-weight: 700; letter-spacing: 0.5px;">BHARAT CONNECT</div>
+                    <div style="font-size: 12px; color: var(--gray-200);">National Portal of India</div>
+                </div>
+            </a>
+        </div>
+        <div class="nav-links" style="display: flex; gap: 24px; align-items: center;">
+            <a href="index.html" style="color: white; text-decoration: none; font-weight: 500;">Home</a>
+            <a href="schemes.html" style="color: var(--saffron); text-decoration: none; font-weight: 600;">Schemes</a>
+            <a href="#" style="color: white; text-decoration: none; font-weight: 500;">Services</a>
+            <a href="#" style="color: white; text-decoration: none; font-weight: 500;">Documents</a>
+            <button style="background: transparent; border: none; color: white; cursor: pointer;"><i data-lucide="search"></i></button>
+            <button style="background: white; color: var(--navy-900); border: none; padding: 8px 16px; border-radius: 6px; font-weight: 600; cursor: pointer;">Sign In</button>
+        </div>
+    </nav>
+    <div class="tricolor-bar" style="height: 4px; display: flex; width: 100%;">
+        <div style="background: var(--saffron); width: 33.33%;"></div>
+        <div style="background: white; width: 33.34%;"></div>
+        <div style="background: var(--india-green); width: 33.33%;"></div>
+    </div>
+
+    <main id="main-content">
+        <!-- Hero -->
+        <section class="hero">
+            <h1><i data-lucide="search" style="width: 32px; height: 32px;"></i> Bharat Scheme Finder</h1>
+            <p>Answer 3 simple questions and discover government schemes tailored for you.</p>
+        </section>
+
+        <!-- Progress Indicator -->
+        <div class="progress-wrapper">
+            <div class="progress-container">
+                <div class="step-item active" id="indicator-step1">
+                    <div class="step-icon">1</div>
+                    <span>Who Are You?</span>
+                </div>
+                <div class="step-line" id="line-1"></div>
+                <div class="step-item" id="indicator-step2">
+                    <div class="step-icon">2</div>
+                    <span>Details</span>
+                </div>
+                <div class="step-line" id="line-2"></div>
+                <div class="step-item" id="indicator-step3">
+                    <div class="step-icon">3</div>
+                    <span>Schemes</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="wizard-container">
+            <!-- Step 1: Citizen Profile -->
+            <div id="step-1" class="step-content active">
+                <h2 style="text-align: center; color: var(--navy-900); margin-bottom: 32px; font-size: 24px;">I am a...</h2>
+                <div class="grid-4" id="profileGrid">
+                    <div class="profile-card" data-profile="student">
+                        <span class="profile-emoji">🎓</span>
+                        <h3 class="profile-title">Student</h3>
+                        <p class="profile-desc">Scholarships, education loans, and skill development</p>
+                    </div>
+                    <div class="profile-card" data-profile="farmer">
+                        <span class="profile-emoji">👨‍🌾</span>
+                        <h3 class="profile-title">Farmer</h3>
+                        <p class="profile-desc">Subsidies, crop insurance, and agricultural tech</p>
+                    </div>
+                    <div class="profile-card" data-profile="job_seeker">
+                        <span class="profile-emoji">🔍</span>
+                        <h3 class="profile-title">Job Seeker</h3>
+                        <p class="profile-desc">Employment exchanges, training, and placement</p>
+                    </div>
+                    <div class="profile-card" data-profile="employee">
+                        <span class="profile-emoji">👔</span>
+                        <h3 class="profile-title">Salaried Employee</h3>
+                        <p class="profile-desc">PF, taxation, housing, and savings schemes</p>
+                    </div>
+                    <div class="profile-card" data-profile="entrepreneur">
+                        <span class="profile-emoji">🚀</span>
+                        <h3 class="profile-title">Entrepreneur / MSME</h3>
+                        <p class="profile-desc">Business loans, startup grants, and compliance</p>
+                    </div>
+                    <div class="profile-card" data-profile="senior">
+                        <span class="profile-emoji">👴</span>
+                        <h3 class="profile-title">Senior Citizen</h3>
+                        <p class="profile-desc">Pensions, healthcare, and welfare programs</p>
+                    </div>
+                    <div class="profile-card" data-profile="pwd">
+                        <span class="profile-emoji">♿</span>
+                        <h3 class="profile-title">Person with Disability</h3>
+                        <p class="profile-desc">Assistive devices, reservation, and care programs</p>
+                    </div>
+                    <div class="profile-card" data-profile="parent">
+                        <span class="profile-emoji">👶</span>
+                        <h3 class="profile-title">Parent / Guardian</h3>
+                        <p class="profile-desc">Child health, nutrition, and early education</p>
+                    </div>
+                    <div class="profile-card" data-profile="woman">
+                        <span class="profile-emoji">👩</span>
+                        <h3 class="profile-title">Woman (Self)</h3>
+                        <p class="profile-desc">Maternity benefits, empowerment, and safety</p>
+                    </div>
+                    <div class="profile-card" data-profile="general">
+                        <span class="profile-emoji">🌍</span>
+                        <h3 class="profile-title">General Citizen</h3>
+                        <p class="profile-desc">Broad welfare, housing, and infrastructure</p>
+                    </div>
+                </div>
+                <div class="wizard-actions">
+                    <button class="btn btn-primary" id="btn-next-1" disabled>
+                        Next: Add Your Details <i data-lucide="arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 2: Details Form -->
+            <div id="step-2" class="step-content">
+                <div class="form-section">
+                    <h2 style="color: var(--navy-900); margin-bottom: 8px; font-size: 24px;">Tell Us More</h2>
+                    <p style="color: var(--gray-600); margin-bottom: 32px;">This helps us find schemes you are eligible for.</p>
+
+                    <div class="form-row">
+                        <label class="form-label">Age Group</label>
+                        <div class="radio-grid">
+                            <label class="radio-label">
+                                <input type="radio" name="age" value="under_18">
+                                <span>Under 18</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="age" value="18_35">
+                                <span>18 - 35 years</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="age" value="36_60">
+                                <span>36 - 60 years</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="age" value="above_60">
+                                <span>Above 60 years</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <label class="form-label">State / Union Territory</label>
+                        <select class="form-select" id="state-select">
+                            <option value="">Select your State/UT...</option>
+                            <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                            <option value="Assam">Assam</option>
+                            <option value="Bihar">Bihar</option>
+                            <option value="Chandigarh">Chandigarh</option>
+                            <option value="Chhattisgarh">Chhattisgarh</option>
+                            <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Goa">Goa</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Haryana">Haryana</option>
+                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                            <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                            <option value="Jharkhand">Jharkhand</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Kerala">Kerala</option>
+                            <option value="Ladakh">Ladakh</option>
+                            <option value="Lakshadweep">Lakshadweep</option>
+                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Manipur">Manipur</option>
+                            <option value="Meghalaya">Meghalaya</option>
+                            <option value="Mizoram">Mizoram</option>
+                            <option value="Nagaland">Nagaland</option>
+                            <option value="Odisha">Odisha</option>
+                            <option value="Puducherry">Puducherry</option>
+                            <option value="Punjab">Punjab</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                            <option value="Sikkim">Sikkim</option>
+                            <option value="Tamil Nadu">Tamil Nadu</option>
+                            <option value="Telangana">Telangana</option>
+                            <option value="Tripura">Tripura</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="Uttarakhand">Uttarakhand</option>
+                            <option value="West Bengal">West Bengal</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <label class="form-label">Annual Family Income</label>
+                        <div class="radio-grid">
+                            <label class="radio-label">
+                                <input type="radio" name="income" value="below_1l">
+                                <span>Below ₹1 Lakh</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="income" value="1l_3l">
+                                <span>₹1L – ₹3L</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="income" value="3l_6l">
+                                <span>₹3L – ₹6L</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="income" value="6l_10l">
+                                <span>₹6L – ₹10L</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="income" value="above_10l">
+                                <span>Above ₹10 Lakh</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <label class="form-label">Gender</label>
+                        <div class="radio-grid">
+                            <label class="radio-label">
+                                <input type="radio" name="gender" value="male">
+                                <span>Male</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="gender" value="female">
+                                <span>Female</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="gender" value="other">
+                                <span>Other</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="gender" value="prefer_not">
+                                <span>Prefer not to say</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="wizard-actions between">
+                    <button class="btn btn-outline" id="btn-back-1">
+                        <i data-lucide="arrow-left"></i> Back
+                    </button>
+                    <button class="btn btn-primary" id="btn-find-schemes">
+                        Find My Schemes <i data-lucide="sparkles"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 3: Results -->
+            <div id="step-3" class="step-content">
+                <div class="results-header">
+                    <h2 class="results-count">Based on your profile, we found <span id="scheme-count-num">0</span> schemes!</h2>
+                    <div class="profile-summary">
+                        <i data-lucide="user" style="width: 16px;"></i> <span id="summary-type">Citizen</span>
+                        <span>•</span>
+                        <span id="summary-location">India</span>
+                    </div>
+                </div>
+
+                <div class="schemes-grid" id="schemes-results-container">
+                    <!-- Scheme Cards will be injected here via JS -->
+                </div>
+
+                <div class="no-results-help">
+                    <h3 style="margin-bottom: 12px; color: var(--navy-900);">Not finding what you need?</h3>
+                    <p style="color: var(--gray-600); margin-bottom: 24px;">Our AI assistant can help you discover more specialized programs based on your specific needs.</p>
+                    <button class="btn btn-outline" style="background: white;">
+                        <i data-lucide="bot"></i> Ask Bharat AI
+                    </button>
+                    <button class="btn btn-outline" id="btn-start-over" style="margin-left: 12px;">
+                        <i data-lucide="rotate-ccw"></i> Start Over
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer style="background: var(--navy-900); color: white; padding: 48px 24px 24px 24px; margin-top: 64px;">
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; margin-bottom: 48px;">
+            <div>
+                <h4 style="font-size: 16px; margin-bottom: 16px; color: var(--saffron);">About Bharat Connect</h4>
+                <p style="font-size: 14px; color: var(--gray-200); line-height: 1.6;">The National Portal of India provides a single window access to information and services provided by the Indian Government for citizens and other stakeholders.</p>
+            </div>
+            <div>
+                <h4 style="font-size: 16px; margin-bottom: 16px; color: var(--saffron);">Services</h4>
+                <ul style="list-style: none; padding: 0; font-size: 14px; line-height: 2.4;">
+                    <li><a href="#" style="color: var(--gray-200); text-decoration: none;">Apply for PAN</a></li>
+                    <li><a href="#" style="color: var(--gray-200); text-decoration: none;">Voter ID Services</a></li>
+                    <li><a href="#" style="color: var(--gray-200); text-decoration: none;">Aadhaar Seeding</a></li>
+                    <li><a href="#" style="color: var(--gray-200); text-decoration: none;">Driving License</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="font-size: 16px; margin-bottom: 16px; color: var(--saffron);">Quick Links</h4>
+                <ul style="list-style: none; padding: 0; font-size: 14px; line-height: 2.4;">
+                    <li><a href="#" style="color: var(--gray-200); text-decoration: none;">Tenders</a></li>
+                    <li><a href="#" style="color: var(--gray-200); text-decoration: none;">Directory</a></li>
+                    <li><a href="#" style="color: var(--gray-200); text-decoration: none;">Gazette</a></li>
+                    <li><a href="#" style="color: var(--gray-200); text-decoration: none;">Holidays</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="font-size: 16px; margin-bottom: 16px; color: var(--saffron);">Connect</h4>
+                <ul style="list-style: none; padding: 0; font-size: 14px; line-height: 2.4;">
+                    <li><a href="#" style="color: var(--gray-200); text-decoration: none;">Contact Us</a></li>
+                    <li><a href="#" style="color: var(--gray-200); text-decoration: none;">Feedback</a></li>
+                    <li><a href="#" style="color: var(--gray-200); text-decoration: none;">Help & FAQs</a></li>
+                </ul>
+            </div>
+        </div>
+        <div style="max-width: 1200px; margin: 0 auto; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 13px; color: var(--gray-200); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+            <div>© 2026 Government of India. Designed by NIC.</div>
+            <div style="display: flex; gap: 16px;">
+                <a href="#" style="color: inherit; text-decoration: none;">Privacy Policy</a>
+                <a href="#" style="color: inherit; text-decoration: none;">Terms of Use</a>
+                <a href="#" style="color: inherit; text-decoration: none;">Accessibility Statement</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS dependencies -->
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // State Management
+        let userProfile = {
+            type: null,
+            label: null,
+            age: null,
+            state: null,
+            income: null,
+            gender: null
+        };
+
+        // DOM Elements
+        const step1 = document.getElementById('step-1');
+        const step2 = document.getElementById('step-2');
+        const step3 = document.getElementById('step-3');
+        
+        const btnNext1 = document.getElementById('btn-next-1');
+        const btnBack1 = document.getElementById('btn-back-1');
+        const btnFindSchemes = document.getElementById('btn-find-schemes');
+        const btnStartOver = document.getElementById('btn-start-over');
+        
+        const indStep1 = document.getElementById('indicator-step1');
+        const indStep2 = document.getElementById('indicator-step2');
+        const indStep3 = document.getElementById('indicator-step3');
+        const line1 = document.getElementById('line-1');
+        const line2 = document.getElementById('line-2');
+
+        // Step 1: Profile Selection
+        const profileCards = document.querySelectorAll('.profile-card');
+        profileCards.forEach(card => {
+            card.addEventListener('click', () => {
+                // Remove selected from all
+                profileCards.forEach(c => c.classList.remove('selected'));
+                // Add to clicked
+                card.classList.add('selected');
+                
+                // Update state
+                userProfile.type = card.dataset.profile;
+                userProfile.label = card.querySelector('.profile-title').textContent;
+                
+                // Enable Next button
+                btnNext1.disabled = false;
+            });
+        });
+
+        // Step 1 -> Step 2
+        btnNext1.addEventListener('click', () => {
+            step1.classList.remove('active');
+            step2.classList.add('active');
+            
+            // Update Progress Indicator
+            indStep1.classList.remove('active');
+            indStep1.classList.add('completed');
+            indStep1.querySelector('.step-icon').innerHTML = '<i data-lucide="check" style="width: 14px;"></i>';
+            lucide.createIcons();
+            
+            line1.classList.add('completed');
+            indStep2.classList.add('active');
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Step 2 -> Step 1 (Back)
+        btnBack1.addEventListener('click', () => {
+            step2.classList.remove('active');
+            step1.classList.add('active');
+            
+            // Update Progress Indicator
+            indStep2.classList.remove('active');
+            line1.classList.remove('completed');
+            
+            indStep1.classList.remove('completed');
+            indStep1.classList.add('active');
+            indStep1.querySelector('.step-icon').innerHTML = '1';
+        });
+
+        // Step 2 -> Step 3 (Submit)
+        btnFindSchemes.addEventListener('click', () => {
+            // Collect Form Data
+            const ageSelected = document.querySelector('input[name="age"]:checked');
+            const stateSelected = document.getElementById('state-select').value;
+            const incomeSelected = document.querySelector('input[name="income"]:checked');
+            const genderSelected = document.querySelector('input[name="gender"]:checked');
+            
+            userProfile.age = ageSelected ? ageSelected.value : null;
+            userProfile.state = stateSelected;
+            userProfile.income = incomeSelected ? incomeSelected.value : null;
+            userProfile.gender = genderSelected ? genderSelected.value : null;
+            
+            // Move to Step 3
+            step2.classList.remove('active');
+            step3.classList.add('active');
+            
+            // Update Progress Indicator
+            indStep2.classList.remove('active');
+            indStep2.classList.add('completed');
+            indStep2.querySelector('.step-icon').innerHTML = '<i data-lucide="check" style="width: 14px;"></i>';
+            lucide.createIcons();
+            
+            line2.classList.add('completed');
+            indStep3.classList.add('active');
+            
+            // Render Results
+            renderResults();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Start Over
+        btnStartOver.addEventListener('click', () => {
+            location.reload();
+        });
+
+        // Mock Scheme Data (Fallback if data.js doesn't provide SCHEMES)
+        const mockSchemes = [
+            {
+                id: 's1',
+                title: 'PM Kisan Samman Nidhi',
+                ministry: 'Ministry of Agriculture',
+                category: 'Financial Assistance',
+                desc: 'An initiative by the government of India in which all farmers will get up to ₹6,000 per year as minimum income support.',
+                benefits: [
+                    '₹6,000 per year in 3 equal installments',
+                    'Direct Benefit Transfer to bank account',
+                    'Supports small and marginal farmers'
+                ],
+                status: 'Active',
+                match: 95,
+                tags: ['farmer']
+            },
+            {
+                id: 's2',
+                title: 'Pradhan Mantri Mudra Yojana',
+                ministry: 'Ministry of Finance',
+                category: 'Business Loan',
+                desc: 'Provide loans up to 10 lakhs to the non-corporate, non-farm small/micro enterprises.',
+                benefits: [
+                    'No collateral required for loans up to ₹10 Lakh',
+                    'Categorized into Shishu, Kishore, Tarun',
+                    'Favorable interest rates for women entrepreneurs'
+                ],
+                status: 'Active',
+                match: 88,
+                tags: ['entrepreneur', 'woman', 'general']
+            },
+            {
+                id: 's3',
+                title: 'National Scholarship Portal (NSP)',
+                ministry: 'Ministry of Minority Affairs',
+                category: 'Education',
+                desc: 'One-stop solution for various scholarship schemes offered by Government of India, State Governments, and UT Administrations.',
+                benefits: [
+                    'Pre-matric and Post-matric scholarships',
+                    'Financial aid for higher education',
+                    'Direct bank transfer of scholarship amount'
+                ],
+                status: 'Open till Oct 31',
+                match: 92,
+                tags: ['student']
+            },
+            {
+                id: 's4',
+                title: 'Ayushman Bharat PM-JAY',
+                ministry: 'Ministry of Health',
+                category: 'Healthcare',
+                desc: 'World\'s largest health insurance/ assurance scheme fully financed by the government.',
+                benefits: [
+                    'Health cover of ₹5 lakhs per family per year',
+                    'Cashless access to health care services',
+                    'Covers up to 3 days of pre-hospitalization'
+                ],
+                status: 'Active',
+                match: 100,
+                tags: ['general', 'senior', 'pwd', 'farmer']
+            },
+            {
+                id: 's5',
+                title: 'Sukanya Samriddhi Yojana',
+                ministry: 'Ministry of Finance',
+                category: 'Savings',
+                desc: 'Small deposit scheme for the girl child launched as a part of the Beti Bachao Beti Padhao campaign.',
+                benefits: [
+                    'High interest rate and tax benefits under 80C',
+                    'Account can be opened anytime before girl turns 10',
+                    'Maturity after 21 years of account opening'
+                ],
+                status: 'Active',
+                match: 85,
+                tags: ['parent', 'general']
+            },
+            {
+                id: 's6',
+                title: 'Stand-Up India Scheme',
+                ministry: 'Ministry of Finance',
+                category: 'Entrepreneurship',
+                desc: 'Facilitates bank loans between 10 lakh and 1 crore to at least one SC or ST borrower and one woman borrower per bank branch.',
+                benefits: [
+                    'Loans for setting up a greenfield enterprise',
+                    'Margin money up to 25% can be provided',
+                    'Focus on women and SC/ST entrepreneurs'
+                ],
+                status: 'Active',
+                match: 90,
+                tags: ['woman', 'entrepreneur']
+            }
+        ];
+
+        function renderResults() {
+            // Update Summary
+            document.getElementById('summary-type').textContent = userProfile.label || 'Citizen';
+            document.getElementById('summary-location').textContent = userProfile.state || 'India';
+            
+            // Filter logic
+            const allSchemes = typeof SCHEMES !== 'undefined' ? SCHEMES : mockSchemes;
+            
+            // Simple filter: Check if scheme tags include the user's selected profile type
+            // Or if it's a general scheme
+            let filteredSchemes = allSchemes.filter(s => {
+                if (s.tags && s.tags.includes(userProfile.type)) return true;
+                if (s.tags && s.tags.includes('general')) return true;
+                // If user is general, show top matching general ones
+                if (userProfile.type === 'general') return true; 
+                return false;
+            });
+            
+            // Limit to 5-6 schemes for UI purposes
+            filteredSchemes = filteredSchemes.slice(0, 6);
+            
+            // Animate counter
+            animateValue("scheme-count-num", 0, filteredSchemes.length, 1000);
+            
+            // Render Cards
+            const container = document.getElementById('schemes-results-container');
+            container.innerHTML = '';
+            
+            filteredSchemes.forEach(scheme => {
+                // Determine match score randomly between 75-100 for realism if not provided
+                const matchScore = scheme.match || Math.floor(Math.random() * (100 - 75 + 1) + 75);
+                
+                const card = document.createElement('div');
+                card.className = 'scheme-card';
+                
+                const benefitsHtml = scheme.benefits.map(b => `<li><i data-lucide="check-circle-2" style="width: 16px; height: 16px;"></i> <span>${b}</span></li>`).join('');
+                
+                card.innerHTML = `
+                    <div class="scheme-meta">
+                        <div class="tags-wrap">
+                            <span class="tag tag-ministry">${scheme.ministry}</span>
+                            <span class="tag tag-status">${scheme.status}</span>
+                        </div>
+                    </div>
+                    <h3 class="scheme-title">${scheme.title}</h3>
+                    <p class="scheme-desc">${scheme.desc}</p>
+                    
+                    <ul class="benefits-list">
+                        ${benefitsHtml}
+                    </ul>
+                    
+                    <div class="match-score">
+                        <div class="match-header">
+                            <span>Eligibility Match</span>
+                            <span>${matchScore}%</span>
+                        </div>
+                        <div class="match-bar-bg">
+                            <div class="match-bar-fill" style="width: 0%" data-target="${matchScore}%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-actions">
+                        <a href="#" class="btn-card secondary">Learn More</a>
+                        <a href="#" class="btn-card primary">Apply <i data-lucide="external-link" style="width: 14px; height: 14px;"></i></a>
+                        <button class="btn-save" onclick="toggleSave(this)" aria-label="Save Scheme">
+                            <i data-lucide="bookmark"></i>
+                        </button>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+            
+            lucide.createIcons();
+            
+            // Animate progress bars
+            setTimeout(() => {
+                document.querySelectorAll('.match-bar-fill').forEach(bar => {
+                    bar.style.width = bar.getAttribute('data-target');
+                });
+            }, 300);
+        }
+
+        // Counter Animation
+        function animateValue(id, start, end, duration) {
+            if (start === end) {
+                document.getElementById(id).innerHTML = end;
+                return;
+            }
+            let range = end - start;
+            let current = start;
+            let increment = end > start ? 1 : -1;
+            let stepTime = Math.abs(Math.floor(duration / range));
+            let obj = document.getElementById(id);
+            let timer = setInterval(function() {
+                current += increment;
+                obj.innerHTML = current;
+                if (current == end) {
+                    clearInterval(timer);
+                }
+            }, stepTime);
+        }
+        
+        // Save functionality
+        function toggleSave(btn) {
+            btn.classList.toggle('saved');
+            const icon = btn.querySelector('svg');
+            if (btn.classList.contains('saved')) {
+                icon.setAttribute('fill', 'currentColor');
+                btn.style.color = 'var(--saffron)';
+                btn.style.borderColor = 'var(--saffron)';
+            } else {
+                icon.setAttribute('fill', 'none');
+                btn.style.color = '';
+                btn.style.borderColor = '';
+            }
+        }
+    </script>
+</body>
+</html>

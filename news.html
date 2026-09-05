@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Updates | Bharat Connect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/main.css">
+    
+</head>
+<body>
+    <div class="gov-bar">
+        <div class="container">
+            <span>Government of India | NIC | MeitY | Digital India</span>
+            <div class="gov-actions">
+                <a href="#main-content">Skip to Content</a>
+                <button aria-label="Accessibility Options"><i data-lucide="eye"></i></button>
+                <select aria-label="Language Select"><option>English</option><option>हिन्दी</option></select>
+            </div>
+        </div>
+    </div>
+    
+    <nav class="main-nav">
+        <div class="container" style="display: flex; align-items: center; justify-content: space-between; padding: 16px 0;">
+            <a href="index.html" class="logo" style="color: white; font-weight: bold; text-decoration: none; font-size: 20px;">Bharat Connect</a>
+            <div class="nav-links" style="display: flex; gap: 24px;">
+                <a href="index.html" style="color: white; text-decoration: none;">Home</a>
+                <a href="dashboard.html" style="color: white; text-decoration: none;">My Dashboard</a>
+                <a href="ministries.html" style="color: white; text-decoration: none;">Ministries</a>
+                <a href="news.html" style="color: white; text-decoration: none; font-weight: bold;">News</a>
+                <a href="help.html" style="color: white; text-decoration: none;">Help</a>
+            </div>
+        </div>
+    </nav>
+    <div class="tricolor-bar">
+        <div class="saffron"></div>
+        <div class="white"></div>
+        <div class="green"></div>
+    </div>
+
+    <main id="main-content" class="container">
+        <div class="page-hero">
+            <h1>News & Government Updates</h1>
+            <div class="date" id="today-date">Today</div>
+        </div>
+
+        <div class="tabs">
+            <div class="tab active">All Updates</div>
+            <div class="tab">Announcements</div>
+            <div class="tab">Schemes</div>
+            <div class="tab">Alerts</div>
+            <div class="tab">Ministry Updates</div>
+            <div class="tab">Press Releases</div>
+        </div>
+
+        <div class="layout">
+            <div class="main-feed">
+                <!-- News items -->
+                <div class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag">Announcement</span>
+                        <span>Ministry of Finance</span>
+                        <span>• 2 hours ago</span>
+                    </div>
+                    <h2 class="news-headline">Government announces new simplified GST return filing process</h2>
+                    <p class="news-summary">In a major relief to small businesses, the Ministry of Finance has introduced a new, highly simplified GST return filing system. The new portal aims to reduce compliance burden and errors.</p>
+                    <div class="news-actions">
+                        <a href="#" class="read-more">Read Full Press Release &rarr;</a>
+                        <button class="btn-share"><i data-lucide="share-2" style="width: 16px;"></i> Share</button>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag">Schemes</span>
+                        <span>Ministry of Education</span>
+                        <span>• 5 hours ago</span>
+                    </div>
+                    <h2 class="news-headline">PM Vidyalaxmi scheme launched for meritorious students</h2>
+                    <p class="news-summary">A new scholarship scheme aimed at providing financial assistance to top-performing students across the country for higher education. Applications open next week.</p>
+                    <div class="news-actions">
+                        <a href="#" class="read-more">View Scheme Details &rarr;</a>
+                        <button class="btn-share"><i data-lucide="share-2" style="width: 16px;"></i> Share</button>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag">Press Release</span>
+                        <span>Prime Minister's Office</span>
+                        <span>• 1 day ago</span>
+                    </div>
+                    <h2 class="news-headline">PM inaugurates 5 new AIIMS institutes across different states</h2>
+                    <p class="news-summary">Bolstering healthcare infrastructure, the Prime Minister today dedicated five newly constructed All India Institutes of Medical Sciences to the nation.</p>
+                    <div class="news-actions">
+                        <a href="#" class="read-more">Read Full Press Release &rarr;</a>
+                        <button class="btn-share"><i data-lucide="share-2" style="width: 16px;"></i> Share</button>
+                    </div>
+                </div>
+                
+                <!-- More items can be loaded via JS, hardcoding a few for layout -->
+            </div>
+
+            <div class="sidebar">
+                <div class="widget breaking">
+                    <div class="widget-title"><i data-lucide="alert-triangle"></i> Urgent Alerts</div>
+                    <div class="alert-item"><a href="#">Deadline to link PAN with Aadhaar extended to Dec 31st</a></div>
+                    <div class="alert-item"><a href="#">Cyclone warning issued for eastern coastal regions</a></div>
+                    <div class="alert-item"><a href="#">Advisory: Beware of fraudulent PM-KISAN messages</a></div>
+                </div>
+
+                <div class="widget">
+                    <div class="widget-title"><i data-lucide="calendar"></i> Upcoming Events</div>
+                    <div class="event-item">
+                        <div class="event-date"><div class="day">15</div><div class="mon">Oct</div></div>
+                        <div class="event-desc">National Innovation Summit 2024 - New Delhi</div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-date"><div class="day">22</div><div class="mon">Oct</div></div>
+                        <div class="event-desc">Rozgar Mela - Phase IV Virtual Launch</div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-date"><div class="day">01</div><div class="mon">Nov</div></div>
+                        <div class="event-desc">Digital India Week Commences</div>
+                    </div>
+                </div>
+
+                <div class="widget">
+                    <div class="widget-title"><i data-lucide="trending-up"></i> Most Read</div>
+                    <div class="trending-item">
+                        <div class="trending-num">1</div>
+                        <a href="#" class="trending-link">How to apply for the new PM Surya Ghar Muft Bijli Yojana</a>
+                    </div>
+                    <div class="trending-item">
+                        <div class="trending-num">2</div>
+                        <a href="#" class="trending-link">Changes in Income Tax slabs for FY 24-25</a>
+                    </div>
+                    <div class="trending-item">
+                        <div class="trending-num">3</div>
+                        <a href="#" class="trending-link">Step-by-step guide to updating Aadhaar online for free</a>
+                    </div>
+                </div>
+
+                <div class="widget">
+                    <div class="widget-title"><i data-lucide="bell"></i> Subscribe to Alerts</div>
+                    <p style="font-size: 14px; color: var(--gray-600); margin-bottom: 16px;">Get important government announcements directly in your inbox.</p>
+                    <input type="email" class="subscribe-input" placeholder="Your email address">
+                    <button class="subscribe-btn">Subscribe Now</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div style="text-align: center; padding: 24px 0; border-top: 1px solid var(--gray-600); font-size: 14px; color: var(--gray-200);">
+                © 2024 Government of India. Designed for Bharat Connect.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+        document.getElementById('today-date').textContent = new Date().toLocaleDateString('en-IN', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+    </script>
+
+    <script src="js/data.js"></script>
+</body>
+</html>
